@@ -1,7 +1,278 @@
 <!DOCTYPE html>
-<html>
-<head><title>Store</title></head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HardLife Repairs - Tool Store</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+            line-height: 1.6;
+        }
+        header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 4px solid #d32f2f;
+        }
+        header h1 { font-size: 2em; letter-spacing: 1px; }
+        header p { color: #ccc; margin-top: 5px; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 15px;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 35px;
+            padding: 0 10px;
+        }
+        .intro h2 { color: #d32f2f; margin-bottom: 10px; }
+        .store-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+        }
+        .image-box {
+            display: flex;
+            height: 260px;
+            background: #fafafa;
+            border-bottom: 1px solid #eee;
+        }
+        .image-box img {
+            width: 50%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+            border-right: 1px solid #eee;
+        }
+        .image-box img:last-child { border-right: none; }
+        .image-box.single-img img {
+            width: 100%;
+            border-right: none;
+        }
+        .product-info { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-info h3 {
+            color: #1a1a1a;
+            font-size: 1.25em;
+            margin-bottom: 10px;
+            border-left: 4px solid #d32f2f;
+            padding-left: 10px;
+        }
+        .product-info p {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 18px;
+            flex-grow: 1;
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: #ff9900;
+            color: #111;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #e68a00; }
+        .affiliate-note {
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 8px;
+        }
+        .extras {
+            margin-top: 40px;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        .extras h2 {
+            color: #d32f2f;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .extra-card img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+        }
+        .extra-card p {
+            margin-top: 8px;
+            font-size: 0.9em;
+            color: #444;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #888;
+            font-size: 0.85em;
+            margin-top: 30px;
+        }
+        @media (max-width: 400px) {
+            .image-box { height: 200px; }
+            .store-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
 <body>
-<h1>Store Coming Soon</h1>
+
+<header>
+    <h1>HardLife Repairs</h1>
+    <p>Tools & Gear That Get the Job Done</p>
+</header>
+
+<div class="container">
+    <div class="intro">
+        <h2>Recommended Gear</h2>
+        <p>These are the tools I trust for home repairs, welding, electrical work, and off-road recovery. Click any item to check the latest price on Amazon.</p>
+    </div>
+
+    <div class="store-grid">
+
+        <!-- Product 1: XYCLE Winch -->
+        <div class="product-card">
+            <div class="image-box">
+                <img src="Images/xycle-winch-1.jpg" alt="XYCLE 12K Winch">
+                <img src="Images/xycle-winch-2.jpg" alt="XYCLE Winch Fairlead">
+            </div>
+            <div class="product-info">
+                <h3>XYCLE 12K 12V Electric Winch</h3>
+                <p>This heavy-duty 12,000 lb winch comes with a waterproof IP68 rating and a wireless remote that lets you operate it from up to 100 feet away. The synthetic rope is safer and lighter than steel cable, making it a solid choice for off-road recovery without the risk of dangerous snap-back.</p>
+                <a href="YOUR_AFFILIATE_LINK_HERE" class="btn">View on Amazon</a>
+                <div class="affiliate-note">As an Amazon Associate I earn from qualifying purchases.</div>
+            </div>
+        </div>
+
+        <!-- Product 2: Fluke BK120 -->
+        <div class="product-card">
+            <div class="image-box">
+                <img src="Images/fluke-bk120-1.jpg" alt="Fluke BK120 at breaker panel">
+                <img src="Images/fluke-bk120-2.jpg" alt="Fluke BK120 transmitter">
+            </div>
+            <div class="product-info">
+                <h3>Fluke BK120 Circuit Breaker Finder</h3>
+                <p>This handy tool takes the guesswork out of finding which breaker controls what outlet by sending a signal through the wiring. Just plug the transmitter into the outlet and scan your breaker panel with the receiver—no more flipping switches blindly.</p>
+                <a href="YOUR_AFFILIATE_LINK_HERE" class="btn">View on Amazon</a>
+                <div class="affiliate-note">As an Amazon Associate I earn from qualifying purchases.</div>
+            </div>
+        </div>
+
+        <!-- Product 3: ARCCAPTAIN Welder -->
+        <div class="product-card">
+            <div class="image-box">
+                <img src="Images/arccaptain-welder-1.jpg" alt="ARCCAPTAIN MIG 200">
+                <img src="Images/arccaptain-welder-2.jpg" alt="ARCCAPTAIN welder dimensions">
+            </div>
+            <div class="product-info">
+                <h3>ARCCAPTAIN MIG 200 Welder</h3>
+                <p>This 200-amp multi-process welder handles MIG, TIG, and stick welding with an easy-to-read digital display and automatic settings for beginners. It runs on both 110V and 220V household power, so you can start welding right out of the box without extra equipment.</p>
+                <a href="YOUR_AFFILIATE_LINK_HERE" class="btn">View on Amazon</a>
+                <div class="affiliate-note">As an Amazon Associate I earn from qualifying purchases.</div>
+            </div>
+        </div>
+
+        <!-- Product 4: Lincoln Welder -->
+        <div class="product-card">
+            <div class="image-box single-img">
+                <img src="Images/lincoln-welder-1.jpg" alt="Lincoln Weld-Pak 90i FC">
+            </div>
+            <div class="product-info">
+                <h3>Lincoln Electric Weld-Pak 90i FC</h3>
+                <p>This compact 120V flux-core welder is perfect for small repairs and DIY projects around the house, weighing only about 15 pounds for easy portability. Lincoln's reliable build quality means you get smooth, consistent welds whether you're fixing a fence or working on auto body panels.</p>
+                <a href="YOUR_AFFILIATE_LINK_HERE" class="btn">View on Amazon</a>
+                <div class="affiliate-note">As an Amazon Associate I earn from qualifying purchases.</div>
+            </div>
+        </div>
+        <!-- Product 5: Klein MM420 -->
+        <div class="product-card">
+            <div class="image-box">
+                <img src="Images/klein-mm420-1.jpg" alt="Klein MM420 specs">
+                <img src="Images/klein-mm420-2.jpg" alt="Klein MM420 multimeter">
+            </div>
+            <div class="product-info">
+                <h3>Klein Tools MM420 Digital Multimeter</h3>
+                <p>This tough multimeter automatically selects the right measurement range so you don't have to guess while testing voltage, current, and resistance. True RMS technology gives you accurate readings on everything from standard outlets to modern electronic devices.</p>
+                <a href="https://amzn.to/3OVEdvU" class="btn">View on Amazon</a>
+                <div class="affiliate-note">As an Amazon Associate I earn from qualifying purchases.</div>
+            </div>
+        </div>
+
+        <!-- Product 6: Smittybilt Winch -->
+        <div class="product-card">
+            <div class="image-box single-img">
+                <img src="Images/smittybilt-winch-1.jpg" alt="Smittybilt XRC 9500">
+            </div>
+            <div class="product-info">
+                <h3>Smittybilt XRC 9,500 lb Winch</h3>
+                <p>Built for serious off-roaders, this 9,500-pound winch features a powerful 6.6 HP motor and a durable steel cable for reliable recovery in mud, snow, or rocks. The included remote control and automatic load-holding brake give you full command during any extraction situation.</p>
+                <a href="https://amzn.to/3QHgdNw" class="btn">View on Amazon</a>
+                <div class="affiliate-note">As an Amazon Associate I earn from qualifying purchases.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Extra reference images -->
+    <div class="extras">
+        <h2>Bonus Reference Guides</h2>
+        <p>Extra images you uploaded that work great as buyer guides or quick-reference content:</p>
+        <div class="extras-grid">
+            <div class="extra-card">
+                <img src="Images/arccaptain-compare.jpg" alt="ARCCAPTAIN vs others">
+                <p><strong>ARCCAPTAIN vs Competitors:</strong> Use this on your site to show why the ARCCAPTAIN beats generic welders on wire feed speed, spot welding, and LED features.</p>
+            </div>
+            <div class="extra-card">
+                <img src="Images/lincoln-safety.jpg" alt="Welding safety guide">
+                <p><strong>Welding Safety Checklist:</strong> Great content to add above your welder listings. It shows visitors you care about safety and builds trust.</p>
+            </div>
+            <div class="extra-card">
+                <img src="Images/klein-lineup.jpg" alt="Klein multimeter lineup">
+                <p><strong>Klein Multimeter Comparison:</strong> If you expand your store later, this chart helps buyers pick between the MM420, MM450, MM720, and others.</p>
+            </div>
+            <div class="extra-card">
+                <img src="Images/xycle-remote.jpg" alt="XYCLE remote detail">
+                <p><strong>XYCLE Remote Close-Up:</strong> Perfect detail shot showing the wireless range and battery info for the winch listing.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <p>HardLife Repairs &copy; 2026 | Amazon Affiliate Store</p>
+</footer>
+
 </body>
 </html>
