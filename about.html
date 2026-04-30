@@ -1,120 +1,278 @@
-<!DOCTYPE html>
+# ABOUT.HTML
+about_html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | HardLife Repairs</title>
-    <meta name="description" content="HardLife Repairs is built by a regular person who learned to fix things the hard way. No shop rates, no BS — just real tools and real guides.">
+    <title>About - HardLife Repairs | Real Fixes From Real Experience</title>
+    <meta name="description" content="HardLife Repairs was built from necessity. Real repair guides for ATVs, appliances, home fixes, and outdoor gear. No theory — just what actually works.">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --orange: #D4653A;
+            --orange-dark: #B8552E;
+            --dark: #1A1A1A;
+            --dark-lighter: #242424;
+            --dark-card: #2A2A2A;
+            --text: #E8E6E3;
+            --text-muted: #9A9896;
+            --text-dim: #6A6866;
+            --max-width: 900px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-            color: #222;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-        header {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 4px solid #d32f2f;
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
         }
-        header h1 { font-size: 2em; letter-spacing: 1px; }
-        header p { color: #ccc; margin-top: 5px; }
         nav {
-            margin-top: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 101, 58, 0.15);
+            z-index: 1000;
+            padding: 0 24px;
         }
-        nav a {
-            color: #fff;
-            margin-right: 20px;
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
-        nav a.store-link {
-            color: #ff9900;
-            font-weight: bold;
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid var(--orange);
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 15px;
+        .logo-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.05em;
         }
-        .about-box {
-            background: #fff;
-            border-radius: 10px;
-            padding: 35px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+        .logo-text span { color: var(--orange); }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
         }
-        .about-box h2 {
-            color: #d32f2f;
-            margin-bottom: 20px;
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-cta {
+            background: var(--orange);
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .nav-cta:hover { background: var(--orange-dark); }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .hero {
+            padding: 140px 24px 60px;
             text-align: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
         }
-        .about-box p {
-            color: #555;
-            margin-bottom: 18px;
-            font-size: 1.05em;
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 12px;
+            color: var(--text);
         }
-        .highlight {
-            background: #fff8e1;
-            border-left: 4px solid #ff9900;
-            padding: 15px 20px;
-            margin: 20px 0;
-            border-radius: 0 6px 6px 0;
+        .hero h1 span { color: var(--orange); }
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .highlight strong {
-            color: #d32f2f;
+        .content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+        .story-section {
+            background: var(--dark-lighter);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .story-section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--orange);
+        }
+        .story-section p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .value-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 28px;
+            transition: all 0.3s;
+        }
+        .value-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
+        }
+        .value-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .affiliate-box {
+            background: var(--dark-lighter);
+            border-left: 4px solid var(--orange);
+            padding: 24px;
+            border-radius: 0 8px 8px 0;
+        }
+        .affiliate-box h3 {
+            color: var(--orange);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .affiliate-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
         footer {
+            background: #111;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(212, 101, 58, 0.1);
             text-align: center;
-            padding: 25px;
-            color: #888;
-            font-size: 0.85em;
-            margin-top: 30px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
         }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding: 120px 20px 40px; }
+            .story-section { padding: 24px; }
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: var(--orange-dark); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--orange); }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>HardLife Repairs</h1>
-    <p>Fix It Yourself. Save Money.</p>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Store.html" class="store-link">Store</a>
-        <a href="guides.html">Guides</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-    </nav>
-</header>
-
-<div class="container">
-    <div class="about-box">
-        <h2>Why This Site Exists</h2>
-        <p>I spent 5 years paying shop rates for stuff I could have fixed myself. Flat tires, dead locks, busted welders, electrical problems — I threw money at all of it because I thought I needed a pro.</p>
-        
-        <p>Then I got broke. Like, <em>really</em> broke. And I realized nobody was coming to save me. So I started watching YouTube, buying cheap tools, and burning my hands until I figured it out.</p>
-        
-        <p>Turns out, most repairs are not that hard. The hard part is knowing <strong>which tool to buy</strong> and <strong>where to start</strong>. That is what this site is for.</p>
-        
-        <div class="highlight">
-            <strong>What You Get Here:</strong>
-            <ul style="margin-left: 20px; margin-top: 10px;">
-                <li>Honest tool reviews — only stuff I have used or researched hard</li>
-                <li>Step-by-step repair guides written like a friend talking, not a manual</li>
-                <li>Amazon affiliate links so I can keep the lights on while you get the best price</li>
-            </ul>
-        </div>
-        
-        <p>I am not a certified mechanic or a master welder. I am a regular person who learned the hard way so you do not have to. If I can fix it, you can fix it too.</p>
-        
-        <p style="text-align: center; margin-top: 30px; color: #777; font-style: italic;">— HardLife</p>
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="Images/logo.jpg" alt="HardLife Repairs" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">Hard<span>Life</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="Store.html">Store</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Store.html" class="nav-cta">Shop Now</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
     </div>
+</nav>
+
+<section class="hero">
+    <h1>About <span>HardLife Repairs</span></h1>
+    <p>Built from necessity. Maintained by obsession. Shared because shops charge too much.</p>
+</section>
+
+<div class="content">
+
+    <div class="story-section">
+        <h2>Why This Exists</h2>
+        <p>HardLife Repairs started the same way most good things do — out of desperation.</p>
+        <p>When your ATV dies on the trail, your dryer quits mid-winter, or your welder switch burns out, you have two choices: pay a shop hundreds of dollars you don't have, or figure it out yourself.</p>
+        <p>I chose to figure it out. Every guide on this site comes from a real breakdown, a real repair, and a real moment of "I hope this works." Some fixes took 20 minutes. Some took three days. All of them got written down so the next person doesn't have to start from zero.</p>
+        <p>This isn't theory from a textbook. It's what actually worked in the garage, on the trail, and in the basement. No specialty tools. No mechanic background required. Just step-by-step fixes that save real money.</p>
+    </div>
+
+    <div class="values-grid">
+        <div class="value-card">
+            <h3>Real Experience</h3>
+            <p>Every guide was born from an actual repair. If it didn't happen to me or someone I trust, it doesn't go on the site.</p>
+        </div>
+        <div class="value-card">
+            <h3>Real Tools</h3>
+            <p>No $500 specialty equipment. If you've got basic hand tools and a multimeter, you can follow every guide here.</p>
+        </div>
+        <div class="value-card">
+            <h3>Real Savings</h3>
+            <p>Most shop repairs are $80-200/hour plus parts. Our guides show you the same fix for the cost of a coffee and an afternoon.</p>
+        </div>
+    </div>
+
+    <div class="affiliate-box">
+        <h3>Affiliate Disclosure</h3>
+        <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program. When you buy through our product links, we earn a small commission at no extra cost to you. This keeps the site running and the guides free. We only recommend tools we actually use — no paid placements, no junk.</p>
+    </div>
+
 </div>
 
 <footer>
-    <p>HardLife Repairs &copy; 2026 | Amazon Affiliate Store</p>
+    <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program.</p>
+    <p>© 2026 HardLife Repairs. Built from real-world experience fixing what had to be fixed.</p>
 </footer>
 
 </body>
-</html>
+</html>'''
+
+with open('/mnt/agents/output/about.html', 'w', encoding='utf-8') as f:
+    f.write(about_html)
+
+print("✅ about.html saved (dark theme)")
+print(f"📄 Size: {len(about_html)} characters")
+
