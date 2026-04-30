@@ -1,0 +1,607 @@
+# Guide 1: ATV Starter Solenoid - High search volume, your actual expertise
+guide1 = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Test and Replace a Starter Solenoid on Any ATV (Step-by-Step) | HardLife Repairs</title>
+    <meta name="description" content="Fix your ATV that clicks but won't start. Step-by-step guide to test and replace a starter solenoid on Yamaha, Honda, Polaris, and Chinese quads. Save $150+ in shop fees.">
+    <meta name="keywords" content="ATV starter solenoid test, ATV clicks but wont start, starter solenoid replacement, Yamaha Grizzly starter, ATV electrical troubleshooting, how to test starter solenoid with multimeter">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #D4653A;
+            --orange-dark: #B8552E;
+            --dark: #1A1A1A;
+            --dark-lighter: #242424;
+            --dark-card: #2A2A2A;
+            --text: #E8E6E3;
+            --text-muted: #9A9896;
+            --text-dim: #6A6866;
+            --max-width: 900px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 101, 58, 0.15);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid var(--orange);
+        }
+        .logo-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.05em;
+        }
+        .logo-text span { color: var(--orange); }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-cta {
+            background: var(--orange);
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--orange-dark); }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .article {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 120px 24px 60px;
+        }
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(212, 101, 58, 0.2);
+        }
+        .breadcrumbs {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+        .breadcrumbs a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+        .article-header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .difficulty {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(212, 101, 58, 0.15);
+            color: var(--orange);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        .intro-box {
+            background: var(--dark-lighter);
+            border-left: 4px solid var(--orange);
+            padding: 24px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .intro-box h3 {
+            color: var(--orange);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .intro-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .tools-needed {
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 101, 58, 0.15);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .tools-needed h3 {
+            color: var(--orange);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .tools-needed ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
+        }
+        .tools-needed li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        .tools-needed li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: bold;
+        }
+        .step {
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--dark-lighter);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--orange);
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+        .step h2 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .step p {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .step-img {
+            width: 100%;
+            height: 300px;
+            background: var(--dark-card);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin: 16px 0;
+            border: 1px dashed rgba(212, 101, 58, 0.3);
+        }
+        .warning {
+            background: rgba(212, 101, 58, 0.1);
+            border: 1px solid rgba(212, 101, 58, 0.3);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .warning svg {
+            width: 24px;
+            height: 24px;
+            color: var(--orange);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .warning p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .pro-tip {
+            background: rgba(100, 200, 100, 0.1);
+            border: 1px solid rgba(100, 200, 100, 0.2);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .pro-tip svg {
+            width: 24px;
+            height: 24px;
+            color: #6bc96b;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .pro-tip p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .product-rec {
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 101, 58, 0.2);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 30px 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .product-rec-img {
+            width: 120px;
+            height: 120px;
+            background: var(--dark-lighter);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .product-rec-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .product-rec-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .product-rec-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: var(--orange);
+            margin-bottom: 8px;
+        }
+        .btn-small {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--orange);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .btn-small:hover { background: var(--orange-dark); }
+        .faq {
+            margin: 40px 0;
+        }
+        .faq h2 {
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+        .faq-item {
+            background: var(--dark-lighter);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .faq-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .related-guides {
+            margin: 50px 0;
+            padding-top: 30px;
+            border-top: 2px solid rgba(212, 101, 58, 0.2);
+        }
+        .related-guides h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        .related-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-2px);
+        }
+        .related-card h4 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .related-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        footer {
+            background: #111;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(212, 101, 58, 0.1);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .article { padding: 100px 20px 40px; }
+            .step { padding: 20px; }
+            .product-rec { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="Images/logo.jpg" alt="HardLife Repairs" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">Hard<span>Life</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="Store.html">Store</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Store.html" class="nav-cta">Shop Now</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
+    </div>
+</nav>
+
+<article class="article">
+    <div class="article-header">
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a> → <a href="guides.html">Guides</a> → <a href="guides.html">ATV & Machine</a> → Starter Solenoid
+        </div>
+        <h1>How to Test and Replace a Starter Solenoid on Any ATV (Step-by-Step)</h1>
+        <div class="article-meta">
+            <span>📅 Updated April 2026</span>
+            <span>⏱️ 30 minutes</span>
+            <span>💰 Saves $120-180</span>
+            <span>🛠️ Beginner friendly</span>
+        </div>
+        <span class="difficulty">Difficulty: Easy</span>
+    </div>
+
+    <div class="intro-box">
+        <h3>Why This Guide Exists</h3>
+        <p>Your ATV clicks but won't turn over. The starter spins fine when you jump it directly. The battery reads 12.6 volts. Nine times out of ten, the starter solenoid is the culprit. Shops charge $150-200 to swap a $15 part that takes 20 minutes. This guide shows you exactly how to test it with a multimeter and replace it yourself — no special tools, no mechanic needed.</p>
+    </div>
+
+    <div class="tools-needed">
+        <h3>🛠️ What You Need</h3>
+        <ul>
+            <li>Digital multimeter (or test light)</li>
+            <li>10mm wrench or socket</li>
+            <li>Replacement solenoid ($12-25)</li>
+            <li>Dielectric grease (optional)</li>
+            <li>Phone/camera for reference photos</li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p><strong>Safety first:</strong> Disconnect the negative battery terminal before working on any electrical component. ATVs have enough current to weld a wrench to the frame if you short positive to ground.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <h2>Locate Your Starter Solenoid</h2>
+        <p>On most ATVs, the solenoid sits near the battery or along the frame rail between the battery and starter motor. It's a small cylinder (about 2 inches long) with two large posts and one or two small wires.</p>
+        <p><strong>Common locations by brand:</strong></p>
+        <p>• <strong>Yamaha Grizzly/Kodiak:</strong> Right side, near battery box<br>
+        • <strong>Honda Rancher/Recon:</strong> Under front fender, left side<br>
+        • <strong>Polaris Sportsman:</strong> Near radiator, right side<br>
+        • <strong>Chinese quads (TaoTao, Coolster):</strong> Beside battery tray</p>
+        <div class="step-img">[Photo: Solenoid location on Yamaha Grizzly 660]</div>
+        <div class="pro-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <p><strong>Pro tip:</strong> Take a photo of the wiring before you disconnect anything. Color codes vary by year and model. A reference photo saves you from guessing later.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <h2>Test the Solenoid With a Multimeter</h2>
+        <p>You don't need to remove it to test it. Set your multimeter to <strong>DC volts (20V range)</strong> and follow these checks:</p>
+        <p><strong>Test 1 — Power in:</strong> Red probe on the battery-side large post. Black probe on ground (frame bolt). Turn key to "start." You should see 12+ volts. If not, your problem is upstream — battery, ignition switch, or safety switches.</p>
+        <p><strong>Test 2 — Trigger wire:</strong> Red probe on the small wire terminal (usually spade connector). Black on ground. Turn key to start. You should see 12+ volts here too. No voltage means the solenoid isn't getting the signal to engage.</p>
+        <p><strong>Test 3 — Power out:</strong> Red probe on the starter-side large post. Black on ground. Turn key to start. If you have power going IN (Test 1) and trigger (Test 2) but nothing coming OUT here, the solenoid is dead.</p>
+        <div class="step-img">[Photo: Multimeter testing solenoid posts]</div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <h2>The Click Test (No Multimeter Needed)</h2>
+        <p>If you don't have a multimeter, use a screwdriver to jump the two large posts. Touch the metal shaft across both posts at the same time. If the starter spins and the engine cranks, your solenoid is definitely bad.</p>
+        <div class="warning">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <p><strong>Sparks will fly.</strong> This is normal — you're completing the circuit the solenoid should complete. Wear safety glasses and don't touch the frame with the screwdriver.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <h2>Remove the Old Solenoid</h2>
+        <p>Disconnect the negative battery terminal first. Then:</p>
+        <p>1. Remove the two large cables (10mm nut). Battery cable first, then starter cable.<br>
+        2. Disconnect the small trigger wire(s). These usually pull straight off.<br>
+        3. Remove the mounting bolt (10mm). The solenoid will drop free.</p>
+        <p>Clean the cable ends with a wire brush if they're corroded. Green or white buildup means high resistance — even a new solenoid won't work right with dirty connections.</p>
+        <div class="step-img">[Photo: Removing cables from old solenoid]</div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">5</div>
+        <h2>Install the New Solenoid</h2>
+        <p>Mount the new solenoid in the same orientation. Reconnect in reverse order:</p>
+        <p>1. Mount bolt finger-tight<br>
+        2. Small trigger wire(s)<br>
+        3. Starter cable (large post)<br>
+        4. Battery cable (large post)<br>
+        5. Tighten everything to snug — don't overtighten<br>
+        6. Reconnect negative battery terminal</p>
+        <p>Apply a thin coat of dielectric grease to the small wire connection if you have it. This prevents corrosion.</p>
+        <div class="step-img">[Photo: New solenoid installed with cables connected]</div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">6</div>
+        <h2>Test Your Fix</h2>
+        <p>Turn the key to "on." Hit the start button. The engine should crank immediately — no clicks, no delays. Let it run for 30 seconds, then shut it off and try again.</p>
+        <p>If it still clicks, check:<br>
+        • Battery voltage under load (should stay above 9.6V while cranking)<br>
+        • Ground connections (frame to engine block)<br>
+        • Starter motor itself (may be drawing too much current)</p>
+        <div class="pro-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <p><strong>Pro tip:</strong> If your ATV sits for months, the solenoid contacts can corrode from moisture. Start it weekly or install a battery disconnect switch to prevent drain.</p>
+        </div>
+    </div>
+
+    <div class="product-rec">
+        <div class="product-rec-img">
+            <img src="Images/klein-mm420-1.jpg" alt="Klein Multimeter" style="width:100%;height:100%;object-fit:cover;border-radius:6px;" onerror="this.parentElement.innerHTML='Klein MM420'">
+        </div>
+        <div class="product-rec-info">
+            <h4>Tool We Used: Klein MM420 Multimeter</h4>
+            <p>Auto-ranging, backlit display, tests volts, ohms, and continuity. The same one we use for every electrical repair on this site.</p>
+            <div class="product-rec-price">$49.99</div>
+            <a href="https://amzn.to/3OVEdvU" class="btn-small" target="_blank">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Can I use a car starter solenoid on my ATV?</h3>
+            <p>No. ATV solenoids are rated for lower amperage and have different mounting. A car solenoid may work temporarily but will overheat and fail. Buy the correct part for your model — they're $12-25.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Why does my solenoid keep burning out?</h3>
+            <p>Three common causes: (1) Low battery voltage makes the solenoid chatter and overheat, (2) Starter motor is failing and drawing too much current, (3) Poor ground connection causes arcing at the contacts.</p>
+        </div>
+        <div class="faq-item">
+            <h3>My ATV clicks once then nothing. Is it the solenoid?</h3>
+            <p>One loud click usually means the solenoid is engaging but the starter isn't spinning. Test by jumping the large posts with a screwdriver. If the starter spins, replace the solenoid. If it doesn't, your starter motor is bad.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How long does a starter solenoid last?</h3>
+            <p>5-10 years under normal use. They fail faster if the ATV sits unused (corrosion) or if the battery is weak (chattering). A $15 solenoid is cheap insurance — replace it proactively if yours is over 8 years old.</p>
+        </div>
+    </div>
+
+    <div class="related-guides">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+            <a href="#" class="related-card">
+                <h4>How to Test an ATV Ignition Coil</h4>
+                <p>No spark? Here's how to test your coil with a multimeter in 10 minutes.</p>
+            </a>
+            <a href="#" class="related-card">
+                <h4>ATV Battery Won't Hold Charge</h4>
+                <p>Diagnose charging system problems and fix them without a shop visit.</p>
+            </a>
+            <a href="#" class="related-card">
+                <h4>How to Clean a Carburetor on Any ATV</h4>
+                <p>Bogging, hard starts, or rough idle? Clean the carb and get back on the trail.</p>
+            </a>
+        </div>
+    </div>
+
+</article>
+
+<footer>
+    <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program.</p>
+    <p>© 2026 HardLife Repairs. Built from real-world experience fixing what had to be fixed.</p>
+</footer>
+
+</body>
+</html>"""
+
+with open('/mnt/agents/output/atv-starter-solenoid.html', 'w', encoding='utf-8') as f:
+    f.write(guide1)
+
+print("✅ Guide 1 saved: atv-starter-solenoid.html")
+print(f"📄 Size: {len(guide1)} characters")
