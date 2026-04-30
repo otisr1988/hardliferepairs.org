@@ -1,0 +1,678 @@
+# Guide 3: Multimeter for Beginners - Evergreen content, high search volume
+guide3 = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use a Multimeter for Beginners: Test Voltage, Continuity & Resistance | HardLife Repairs</title>
+    <meta name="description" content="Learn to use a multimeter in 20 minutes. Test car batteries, outlets, fuses, and wires like a pro. Step-by-step photos for beginners. No electrical experience needed.">
+    <meta name="keywords" content="how to use a multimeter, multimeter for beginners, test car battery with multimeter, multimeter continuity test, how to read a multimeter, best multimeter for home use, digital multimeter tutorial">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --orange: #D4653A;
+            --orange-dark: #B8552E;
+            --dark: #1A1A1A;
+            --dark-lighter: #242424;
+            --dark-card: #2A2A2A;
+            --text: #E8E6E3;
+            --text-muted: #9A9896;
+            --text-dim: #6A6866;
+            --max-width: 900px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.2;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 101, 58, 0.15);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid var(--orange);
+        }
+        .logo-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.05em;
+        }
+        .logo-text span { color: var(--orange); }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .nav-links a:hover { color: var(--orange); }
+        .nav-cta {
+            background: var(--orange);
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--orange-dark); }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .article {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 120px 24px 60px;
+        }
+        .article-header {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(212, 101, 58, 0.2);
+        }
+        .breadcrumbs {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+        }
+        .breadcrumbs a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+        .article-header h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        .article-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+        }
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .difficulty {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(212, 101, 58, 0.15);
+            color: var(--orange);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+        .intro-box {
+            background: var(--dark-lighter);
+            border-left: 4px solid var(--orange);
+            padding: 24px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .intro-box h3 {
+            color: var(--orange);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .intro-box p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+        .tools-needed {
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 101, 58, 0.15);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        .tools-needed h3 {
+            color: var(--orange);
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .tools-needed ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 8px;
+        }
+        .tools-needed li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding-left: 20px;
+            position: relative;
+        }
+        .tools-needed li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: bold;
+        }
+        .step {
+            margin: 40px 0;
+            padding: 30px;
+            background: var(--dark-lighter);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--orange);
+            color: #fff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-bottom: 16px;
+        }
+        .step h2 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        .step p {
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .step-img {
+            width: 100%;
+            height: 300px;
+            background: var(--dark-card);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin: 16px 0;
+            border: 1px dashed rgba(212, 101, 58, 0.3);
+        }
+        .warning {
+            background: rgba(212, 101, 58, 0.1);
+            border: 1px solid rgba(212, 101, 58, 0.3);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .warning svg {
+            width: 24px;
+            height: 24px;
+            color: var(--orange);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .warning p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .pro-tip {
+            background: rgba(100, 200, 100, 0.1);
+            border: 1px solid rgba(100, 200, 100, 0.2);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+        .pro-tip svg {
+            width: 24px;
+            height: 24px;
+            color: #6bc96b;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .pro-tip p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .product-rec {
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 101, 58, 0.2);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 30px 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .product-rec-img {
+            width: 120px;
+            height: 120px;
+            background: var(--dark-lighter);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .product-rec-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .product-rec-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .product-rec-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: var(--orange);
+            margin-bottom: 8px;
+        }
+        .btn-small {
+            display: inline-block;
+            padding: 8px 20px;
+            background: var(--orange);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .btn-small:hover { background: var(--orange-dark); }
+        .faq {
+            margin: 40px 0;
+        }
+        .faq h2 {
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            color: var(--text);
+        }
+        .faq-item {
+            background: var(--dark-lighter);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .faq-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .related-guides {
+            margin: 50px 0;
+            padding-top: 30px;
+            border-top: 2px solid rgba(212, 101, 58, 0.2);
+        }
+        .related-guides h2 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        .related-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s;
+        }
+        .related-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-2px);
+        }
+        .related-card h4 {
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .related-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        footer {
+            background: #111;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(212, 101, 58, 0.1);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .article { padding: 100px 20px 40px; }
+            .step { padding: 20px; }
+            .product-rec { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="Images/logo.jpg" alt="HardLife Repairs" class="logo-img" onerror="this.style.display='none'">
+            <span class="logo-text">Hard<span>Life</span></span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="Store.html">Store</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Store.html" class="nav-cta">Shop Now</a></li>
+        </ul>
+        <button class="mobile-menu-btn">☰</button>
+    </div>
+</nav>
+
+<article class="article">
+    <div class="article-header">
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a> → <a href="guides.html">Guides</a> → <a href="guides.html">Tool Guides</a> → Multimeter Tutorial
+        </div>
+        <h1>How to Use a Multimeter for Beginners: Test Voltage, Continuity & Resistance</h1>
+        <div class="article-meta">
+            <span>📅 Updated April 2026</span>
+            <span>⏱️ 20 minutes to learn</span>
+            <span>💰 Saves $100s in diagnostic fees</span>
+            <span>🛠️ Absolute beginner</span>
+        </div>
+        <span class="difficulty">Difficulty: Beginner</span>
+    </div>
+
+    <div class="intro-box">
+        <h3>Why This Guide Exists</h3>
+        <p>A multimeter is the single most useful tool for any repair — electrical, automotive, or appliance. It tells you if a battery is dead, a fuse is blown, a wire is broken, or an outlet is live. This guide teaches you the three tests you'll use 95% of the time: voltage, continuity, and resistance. No electrical background needed. By the end, you'll diagnose problems that stump most people.</p>
+    </div>
+
+    <div class="tools-needed">
+        <h3>🛠️ What You Need</h3>
+        <ul>
+            <li>Digital multimeter (auto-ranging preferred)</li>
+            <li>Fresh 9V battery for the meter</li>
+            <li>Something to test (car battery, fuse, outlet)</li>
+            <li>5 minutes of patience</li>
+        </ul>
+    </div>
+
+    <div class="warning">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        <p><strong>Household voltage can kill.</strong> Never touch metal probes while testing live circuits. Keep fingers on the plastic handles only. If you're nervous, practice on a dead car battery first.</p>
+    </div>
+
+    <div class="step">
+        <div class="step-number">1</div>
+        <h2>Know Your Multimeter</h2>
+        <p>Every digital multimeter has the same basic parts, no matter the brand:</p>
+        <p><strong>The dial:</strong> This selects what you're measuring. The three settings you need:<br>
+        • <strong>V⎓ (DC voltage):</strong> For batteries, cars, ATVs, electronics<br>
+        • <strong>V∿ (AC voltage):</strong> For wall outlets, household wiring<br>
+        • <strong>Ω (ohms/resistance):</strong> For testing fuses, wires, heating elements<br>
+        • <strong>))) (continuity):</strong> Beeps when two points connect (best for finding breaks)</p>
+        <p><strong>The ports:</strong> Three holes at the bottom:<br>
+        • <strong>COM (black):</strong> Common/ground — your black probe always goes here<br>
+        • <strong>VΩmA (red):</strong> Voltage, resistance, and milliamps — red probe here for 99% of tests<br>
+        • <strong>10A (red):</strong> High current — only for measuring amps, rarely needed</p>
+        <p><strong>The display:</strong> Shows numbers. "OL" or "1" means "overload" — the reading is too high for the selected range or there's no connection.</p>
+        <div class="step-img">[Photo: Multimeter with dial, ports, and display labeled]</div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">2</div>
+        <h2>Test DC Voltage (Car Batteries, ATVs, Electronics)</h2>
+        <p>This is the test you'll use most. It tells you if a battery is good, if a power supply is working, or if a wire has voltage.</p>
+        <p><strong>Setup:</strong><br>
+        1. Turn dial to V⎓ (DC voltage)<br>
+        2. If your meter isn't auto-ranging, select 20V<br>
+        3. Black probe in COM port<br>
+        4. Red probe in VΩmA port</p>
+        <p><strong>Test a car battery:</strong><br>
+        1. Touch red probe to positive terminal (+)<br>
+        2. Touch black probe to negative terminal (-)<br>
+        3. Read the display</p>
+        <p><strong>What the numbers mean:</strong><br>
+        • 12.6V+ = Fully charged, good battery<br>
+        • 12.4V = 75% charged — okay but getting low<br>
+        • 12.2V = 50% charged — needs charging soon<br>
+        • 12.0V or less = Dead or dying — charge or replace<br>
+        • 10.5V or less = Deep discharged — probably damaged</p>
+        <p><strong>Test under load:</strong> Have someone crank the engine while you watch the meter. Voltage should stay above 9.6V. If it drops to 8V or less, the battery is toast.</p>
+        <div class="step-img">[Photo: Testing car battery with multimeter showing 12.6V]</div>
+        <div class="pro-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <p><strong>Pro tip:</strong> Test battery voltage after the vehicle has sat overnight. Testing right after driving gives a false high reading (surface charge). A resting battery tells the truth.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">3</div>
+        <h2>Test AC Voltage (Wall Outlets, Household Wiring)</h2>
+        <p>Before you replace an outlet or switch, confirm it has power. This test also checks if a breaker is actually sending voltage.</p>
+        <p><strong>Setup:</strong><br>
+        1. Turn dial to V∿ (AC voltage)<br>
+        2. Select 200V or 750V range (household is 120V)<br>
+        3. Black probe in COM, red in VΩmA</p>
+        <p><strong>Test a wall outlet:</strong><br>
+        1. Insert red probe into the smaller slot (hot)<br>
+        2. Insert black probe into the larger slot (neutral)<br>
+        3. You should read 110-125V</p>
+        <p><strong>Test the ground:</strong><br>
+        1. Red probe in hot (small slot)<br>
+        2. Black probe in ground (round hole)<br>
+        3. Should also read 110-125V<br>
+        4. If not, the outlet isn't grounded — safety hazard</p>
+        <p><strong>Test a light switch:</strong><br>
+        1. Remove the cover plate<br>
+        2. Touch red probe to either screw on the switch<br>
+        3. Touch black probe to the metal box (ground)<br>
+        4. Flip the switch — one screw should always have voltage, the other only when switch is on</p>
+        <div class="warning">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <p><strong>Never touch metal while testing live outlets.</strong> Hold the probes by the plastic handles only. If you're not confident, turn off the breaker and use a non-contact voltage tester first.</p>
+        </div>
+        <div class="step-img">[Photo: Testing wall outlet showing 120.3V AC]</div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">4</div>
+        <h2>Test Continuity (Find Broken Wires, Blown Fuses, Bad Switches)</h2>
+        <p>Continuity means "is there a complete path?" The meter beeps if electricity can flow from one probe to the other. No beep = broken circuit.</p>
+        <p><strong>Setup:</strong><br>
+        1. Turn dial to continuity ())) symbol<br>
+        2. Some meters combine this with resistance (Ω) — look for the sound wave symbol<br>
+        3. Black probe in COM, red in VΩmA</p>
+        <p><strong>Test a fuse:</strong><br>
+        1. Remove the fuse from the vehicle/appliance<br>
+        2. Touch one probe to each metal end of the fuse<br>
+        3. Beep = good fuse. No beep = blown fuse. Simple.</p>
+        <p><strong>Test a wire:</strong><br>
+        1. Disconnect both ends of the wire<br>
+        2. Touch one probe to each end<br>
+        3. Beep = wire is intact. No beep = wire is broken somewhere inside the insulation</p>
+        <p><strong>Test a switch:</strong><br>
+        1. Disconnect the switch<br>
+        2. Touch probes to the switch terminals<br>
+        3. Flip the switch — should beep in one position, silent in the other<br>
+        4. If it beeps (or doesn't beep) in both positions, the switch is bad</p>
+        <div class="step-img">[Photo: Testing fuse with continuity beep visible on display]</div>
+        <div class="pro-tip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            <p><strong>Pro tip:</strong> Continuity tests only work on DEAD circuits. Remove the battery, unplug the device, or turn off the breaker. Testing continuity on a live circuit will damage your meter.</p>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">5</div>
+        <h2>Test Resistance (Ohms) — Heating Elements, Sensors, Spark Plugs</h2>
+        <p>Resistance tells you if a component is within spec. Every electrical part has a designed resistance range. Too high or too low = replacement needed.</p>
+        <p><strong>Setup:</strong><br>
+        1. Turn dial to Ω (ohms)<br>
+        2. Auto-ranging meters pick the scale automatically<br>
+        3. Manual meters: start at the highest range and work down<br>
+        4. Black probe in COM, red in VΩmA</p>
+        <p><strong>Test a dryer heating element:</strong><br>
+        1. Disconnect the element<br>
+        2. Touch probes to the element terminals<br>
+        3. Should read 5-15 ohms (check your dryer's spec)<br>
+        4. "OL" or infinity = broken coil, replace element</p>
+        <p><strong>Test a spark plug:</strong><br>
+        1. Remove the plug<br>
+        2. Touch one probe to the center electrode, one to the metal threads<br>
+        3. Should read 5,000-15,000 ohms (5K-15K)<br>
+        4. Much higher = cracked insulator. Much lower = shorted internally</p>
+        <p><strong>Test a coolant temperature sensor:</strong><br>
+        1. Remove sensor from engine<br>
+        2. At room temperature (70°F), should read 2,000-3,000 ohms<br>
+        3. Put sensor in hot water — resistance should drop as temperature rises<br>
+        4. No change = sensor is dead</p>
+        <div class="step-img">[Photo: Testing dryer element showing 8.4 ohms on display]</div>
+    </div>
+
+    <div class="step">
+        <div class="step-number">6</div>
+        <h2>Common Mistakes Beginners Make</h2>
+        <p><strong>Mistake 1: Testing resistance on a live circuit.</strong><br>
+        You'll get nonsense readings and might fry the meter. Always disconnect power first.</p>
+        <p><strong>Mistake 2: Wrong probe ports.</strong><br>
+        Putting the red probe in the 10A port for voltage tests gives wrong readings. COM and VΩmA are your defaults.</p>
+        <p><strong>Mistake 3: Not making good contact.</strong><br>
+        Rust, paint, or grease on battery terminals gives false low readings. Scrape to bare metal first.</p>
+        <p><strong>Mistake 4: Confusing AC and DC.</strong><br>
+        Testing a car battery on AC setting shows 0V. Testing a wall outlet on DC setting also shows 0V. Match the dial to the power source.</p>
+        <p><strong>Mistake 5: Ignoring "OL" readings.</strong><br>
+        "OL" means overload OR open line (no connection). In continuity mode it means "broken." In resistance mode it means "infinite resistance." Both mean "replace the part."</p>
+    </div>
+
+    <div class="product-rec">
+        <div class="product-rec-img">
+            <img src="Images/klein-mm420-1.jpg" alt="Klein Multimeter" style="width:100%;height:100%;object-fit:cover;border-radius:6px;" onerror="this.parentElement.innerHTML='Klein MM420'">
+        </div>
+        <div class="product-rec-info">
+            <h4>Our Pick: Klein MM420 Auto-Ranging Multimeter</h4>
+            <p>Auto-ranging (no dial guessing), backlit display, tests everything in this guide. The same meter we use for ATV electrical, dryer repair, and home wiring checks. Tough enough for the shop, simple enough for beginners.</p>
+            <div class="product-rec-price">$49.99</div>
+            <a href="https://amzn.to/3OVEdvU" class="btn-small" target="_blank">Check Price on Amazon</a>
+        </div>
+    </div>
+
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What's the difference between a $20 multimeter and a $100 one?</h3>
+            <p>Accuracy, safety ratings, and features. A $20 meter is fine for car batteries and continuity. A $50+ meter has true RMS (accurate on AC), higher safety ratings (CAT III for household), and better probes. For home use, $40-60 is the sweet spot.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can I test a car alternator with a multimeter?</h3>
+            <p>Yes. With the engine running, battery voltage should read 13.5-14.5V. Below 13V means the alternator isn't charging. Above 15V means the voltage regulator is bad and will cook your battery.</p>
+        </div>
+        <div class="faq-item">
+            <h3>My multimeter shows negative voltage. Is it broken?</h3>
+            <p>No — you reversed the probes. Red is positive, black is negative. Swap them and the reading goes positive. Negative voltage won't hurt the meter, but it confuses beginners.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do I test if my house ground is working?</h3>
+            <p>Set meter to AC voltage. Test from hot (small slot) to ground (round hole). Should read 110-125V — same as hot-to-neutral. If hot-to-ground reads 0V, your ground wire is disconnected. Call an electrician — this is a safety issue.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Can a multimeter test a battery that's installed?</h3>
+            <p>Yes — that's the normal way. Touch probes to the battery terminals while it's connected. For the most accurate test, check voltage after the car has sat overnight (resting voltage). Testing right after driving gives a falsely high reading.</p>
+        </div>
+    </div>
+
+    <div class="related-guides">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+            <a href="atv-starter-solenoid.html" class="related-card">
+                <h4>How to Test an ATV Starter Solenoid</h4>
+                <p>Put your new multimeter skills to work on a real ATV electrical problem.</p>
+            </a>
+            <a href="dryer-not-heating.html" class="related-card">
+                <h4>Dryer Not Heating? Fix It in 45 Minutes</h4>
+                <p>Use continuity and resistance tests to diagnose dryer heating problems.</p>
+            </a>
+            <a href="#" class="related-card">
+                <h4>How to Test a Car Battery Like a Pro</h4>
+                <p>Voltage, load testing, and when to replace before you get stranded.</p>
+            </a>
+        </div>
+    </div>
+
+</article>
+
+<footer>
+    <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program.</p>
+    <p>© 2026 HardLife Repairs. Built from real-world experience fixing what had to be fixed.</p>
+</footer>
+
+</body>
+</html>"""
+
+with open('/mnt/agents/output/how-to-use-multimeter.html', 'w', encoding='utf-8') as f:
+    f.write(guide3)
+
+print("✅ Guide 3 saved: how-to-use-multimeter.html")
+print(f"📄 Size: {len(guide3)} characters")
