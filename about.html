@@ -3,266 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - HardLife Repairs</title>
-    <meta name="description" content="HardLife Repairs — built from real breakdowns and real fixes. ATV repair, home DIY, welding guides from someone who's been there.">
+    <title>About - HardLife Repairs & Home DIY</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1A1A1A;
-            color: #E0E0E0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
             line-height: 1.6;
         }
-        header {
-            background: #111;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #D4653A;
+        
+        /* Navigation */
+        nav {
+            background-color: #2d2d2d;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 3px solid #ff6b35;
         }
-        .logo {
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6b35;
             text-decoration: none;
         }
-        .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-        }
-        .logo-text {
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-        .logo-text span {
-            color: #D4653A;
-        }
-        .desktop-nav {
+        
+        .nav-links {
             display: flex;
-            gap: 25px;
+            list-style: none;
+            gap: 30px;
         }
-        .desktop-nav a {
-            color: #ccc;
+        
+        .nav-links a {
+            color: #e0e0e0;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        .desktop-nav a:hover {
-            color: #D4653A;
+        
+        .nav-links a:hover {
+            color: #ff6b35;
         }
-        .desktop-nav a.active {
-            color: #D4653A;
-        }
-        .menu-btn {
+        
+        /* Mobile Menu */
+        .mobile-nav {
             display: none;
-            background: none;
-            border: none;
-            color: #D4653A;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-        #mobileNav {
-            display: none;
-            background: #111;
-            border-bottom: 2px solid #D4653A;
+            background-color: #2d2d2d;
+            padding: 15px;
             text-align: center;
-            padding: 10px 0;
         }
-        #mobileNav a {
+        
+        .mobile-nav a {
             display: block;
-            color: #ccc;
+            color: #e0e0e0;
             text-decoration: none;
-            padding: 12px;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #333;
+            padding: 10px;
+            border-bottom: 1px solid #444;
         }
-        #mobileNav a:hover {
-            color: #D4653A;
-            background: #1a1a1a;
+        
+        /* Banner */
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            overflow: hidden;
         }
-        #mobileNav a.active {
-            color: #D4653A;
+        
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(180deg, #1A1A1A 0%, #222 100%);
-        }
-        .hero h1 {
-            font-size: 2.2rem;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        .hero h1 span {
-            color: #D4653A;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        
+        /* Main Content */
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        .story-box {
-            background: #222;
-            border-radius: 10px;
+        
+        h1 {
+            color: #ff6b35;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #ff6b35;
+            font-size: 28px;
+            margin: 30px 0 15px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .about-section {
+            background-color: #2d2d2d;
             padding: 30px;
+            border-radius: 10px;
             margin-bottom: 30px;
-            border-left: 4px solid #D4653A;
+            border-left: 4px solid #ff6b35;
         }
-        .story-box h2 {
-            color: #D4653A;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .story-box p {
-            margin-bottom: 15px;
-            color: #ccc;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        
+        .brand-logo {
+            text-align: center;
             margin: 30px 0;
         }
-        .feature-card {
-            background: #222;
+        
+        .brand-logo img {
+            max-width: 300px;
+            height: auto;
             border-radius: 10px;
-            padding: 25px;
-            text-align: center;
         }
-        .feature-card h3 {
-            color: #fff;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        .feature-card p {
-            color: #aaa;
-            font-size: 0.95rem;
-        }
-        .affiliate-box {
-            background: #222;
-            border-radius: 10px;
-            padding: 25px;
-            margin-top: 30px;
-            border-left: 4px solid #D4653A;
-        }
-        .affiliate-box h3 {
-            color: #D4653A;
-            margin-bottom: 10px;
-        }
-        .affiliate-box p {
-            color: #aaa;
-            font-size: 0.9rem;
-        }
+        
+        /* Footer */
         footer {
-            background: #111;
+            background-color: #2d2d2d;
             text-align: center;
-            padding: 30px 20px;
-            border-top: 2px solid #D4653A;
-            margin-top: 40px;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 3px solid #ff6b35;
         }
+        
         footer p {
-            color: #666;
-            font-size: 0.85rem;
-            margin-bottom: 5px;
+            color: #888;
+            margin: 5px 0;
         }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .desktop-nav { display: none; }
-            .menu-btn { display: block; }
-            .hero h1 { font-size: 1.6rem; }
-            .feature-grid { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .about-section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo">
-            <img src="images/logo.png" alt="HardLife Repairs Logo">
-            <span class="logo-text">Hard<span>Life</span></span>
-        </a>
-        <nav class="desktop-nav">
-            <a href="index.html">Home</a>
-            <a href="guides.html">Guides</a>
-            <a href="store.html">Store</a>
-            <a href="about.html" class="active">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-    </header>
-
-    <div id="mobileNav">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🔧 HardLife Repairs</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
         <a href="index.html">Home</a>
-        <a href="guides.html">Guides</a>
         <a href="store.html">Store</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
     </div>
 
-    <section class="hero">
-        <h1>ABOUT <span>HARDLIFE</span><br>REPAIRS</h1>
-        <p>Built from necessity. Maintained by obsession. Shared because shops charge too much.</p>
-    </section>
+    <!-- Brand Logo -->
+    <div class="brand-logo">
+        <img src="images/hardlife-logo.png" alt="HardLife Repairs Brand Logo">
+    </div>
 
+    <!-- Main Content -->
     <div class="container">
+        <h1>About HardLife Repairs & Home DIY</h1>
         
-        <div class="story-box">
-            <h2>Why This Exists</h2>
-            <p>HardLife Repairs started the same way most good things do — out of desperation.</p>
-            <p>When your ATV dies on the trail, your dryer quits mid-winter, or your welder switch burns out, you have two choices: pay a shop hundreds of dollars you don't have, or figure it out yourself.</p>
-            <p>I chose to figure it out. Every guide on this site comes from a real breakdown, a real repair, and a real moment of "I hope this works." Some fixes took 20 minutes. Some took three days. All of them got written down so the next person doesn't have to start from zero.</p>
-            <p>This isn't theory from a textbook. It's what actually worked in the garage, on the trail, and in the basement. No specialty tools. No mechanic background required. Just step-by-step fixes that save real money.</p>
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>HardLife Repairs was born from real struggle and real solutions. We understand what it's like to fix what you have because buying new isn't an option. Every tutorial, every product recommendation, and every piece of advice comes from hands-on experience in the field, in the garage, and in the home.</p>
+            
+            <p>We specialize in small engine repair, welding, electrical work, ATV maintenance, and home DIY projects. Whether you're trying to get your lawnmower running, wire up a new outlet, or restore an old machine, we've been there and we can help you through it.</p>
         </div>
-
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h3>REAL EXPERIENCE</h3>
-                <p>Every guide was born from an actual repair. If it didn't happen to me or someone I trust, it doesn't go on the site.</p>
-            </div>
-            <div class="feature-card">
-                <h3>REAL TOOLS</h3>
-                <p>No $500 specialty equipment. If you've got basic hand tools and a multimeter, you can follow every guide here.</p>
-            </div>
-            <div class="feature-card">
-                <h3>REAL SAVINGS</h3>
-                <p>Most shop repairs are $80-200/hour plus parts. Our guides show you the same fix for the cost of a coffee and an afternoon.</p>
-            </div>
+        
+        <div class="about-section">
+            <h2>What We Do</h2>
+            <p>🔧 <strong>Small Engine Repair</strong> - Lawn mowers, ATVs, generators, and more</p>
+            <p>⚡ <strong>Electrical Work</strong> - Home wiring, troubleshooting, tool recommendations</p>
+            <p>🔥 <strong>Welding & Metalwork</strong> - Equipment reviews and technique guides</p>
+            <p>🏠 <strong>Home DIY</strong> - Practical projects that save you money</p>
         </div>
-
-        <div class="affiliate-box">
-            <h3>Affiliate Disclosure</h3>
-            <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program. When you buy through our product links, we earn a small commission at no extra cost to you. This keeps the site running and the guides free. We only recommend tools we actually use — no paid placements, no junk.</p>
+        
+        <div class="about-section">
+            <h2>Why Trust Us?</h2>
+            <p>We don't just talk about repairs—we live them. Every product in our store is something we've used or thoroughly researched. Every tutorial is tested in real conditions. We believe in honest work, honest reviews, and helping others learn to stand on their own two feet.</p>
         </div>
-
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program.</p>
-        <p>&copy; 2026 HardLife Repairs. Built from real-world experience fixing what had to be fixed.</p>
+        <p>HardLife Repairs & Home DIY</p>
+        <p>Built with sweat, grease, and determination.</p>
+        <p>&copy; 2026 HardLife Repairs. All rights reserved.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            var nav = document.getElementById('mobileNav');
-            if (nav.style.display === 'block') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'block';
-            }
-        }
-    </script>
 
 </body>
 </html>
