@@ -1,214 +1,518 @@
-<!DOCTYPE html>
+# Create the COMPLETE dark guides.html that replaces the old white one
+guides_html = '''<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIY Repair Guides | HardLife Repairs</title>
-    <meta name="description" content="Free step-by-step repair guides for regular people. Learn to change tires, fix locks, clean carburetors, and start welding. No shop rates, no BS.">
+    <title>Repair Guides - HardLife Repairs | DIY Fix It Yourself Guides</title>
+    <meta name="description" content="Step-by-step repair guides for ATVs, appliances, home fixes, and outdoor gear. Real fixes from real experience. Save money, skip the shop.">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --orange: #D4653A;
+            --orange-dark: #B8552E;
+            --orange-light: #E87B52;
+            --dark: #1A1A1A;
+            --dark-lighter: #242424;
+            --dark-card: #2A2A2A;
+            --text: #E8E6E3;
+            --text-muted: #9A9896;
+            --text-dim: #6A6866;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f5f5;
-            color: #222;
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
-        header {
-            background: #1a1a1a;
-            color: #fff;
-            padding: 25px 20px;
-            text-align: center;
-            border-bottom: 4px solid #d32f2f;
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
         }
-        header h1 { font-size: 2em; letter-spacing: 1px; }
-        header p { color: #ccc; margin-top: 5px; }
+
+        /* ===== NAVIGATION ===== */
         nav {
-            margin-top: 15px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(212, 101, 58, 0.15);
+            z-index: 1000;
+            padding: 0 24px;
         }
-        nav a {
-            color: #fff;
-            margin-right: 20px;
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             text-decoration: none;
         }
-        nav a.store-link {
-            color: #ff9900;
-            font-weight: bold;
+
+        .logo-img {
+            width: 42px;
+            height: 42px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 2px solid var(--orange);
         }
-        .container {
-            max-width: 900px;
+
+        .logo-text {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: 0.05em;
+        }
+
+        .logo-text span {
+            color: var(--orange);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .nav-cta {
+            background: var(--orange);
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--orange-dark);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 140px 24px 60px;
+            text-align: center;
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 30px 15px;
         }
-        .intro {
-            text-align: center;
-            margin-bottom: 35px;
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 12px;
+            color: var(--text);
         }
-        .intro h2 {
-            color: #d32f2f;
-            margin-bottom: 10px;
+
+        .hero h1 span {
+            color: var(--orange);
         }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== CATEGORY FILTER ===== */
+        .filter-bar {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 40px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--orange);
+            border-color: var(--orange);
+            color: #fff;
+        }
+
+        /* ===== GUIDES GRID ===== */
+        .guides-section {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
         .guide-card {
-            background: #fff;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 28px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--text);
+            display: block;
+            position: relative;
+            overflow: hidden;
         }
+
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--orange);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .guide-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
+        }
+
+        .guide-card:hover::before {
+            opacity: 1;
+        }
+
+        .guide-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(212, 101, 58, 0.15);
+            color: var(--orange);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
         .guide-card h3 {
-            color: #1a1a1a;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            border-left: 4px solid #d32f2f;
-            padding-left: 10px;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text);
         }
-        .guide-card ol, .guide-card ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+
+        .guide-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
         }
-        .guide-card li {
-            margin-bottom: 8px;
+
+        .guide-meta {
+            display: flex;
+            gap: 16px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 16px;
+            margin-top: 16px;
         }
-        .tip {
-            background: #fff8e1;
-            border-left: 4px solid #ff9900;
-            padding: 12px 15px;
-            margin: 15px 0;
-            border-radius: 0 6px 6px 0;
+
+        .guide-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
-        .tip strong { color: #d32f2f; }
+
         .tools-needed {
-            background: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 12px 15px;
-            margin: 15px 0;
+            background: var(--dark-lighter);
+            border-left: 3px solid var(--orange);
+            padding: 12px 16px;
             border-radius: 0 6px 6px 0;
+            margin-top: 12px;
         }
-        .tools-needed strong { color: #2e7d32; }
+
+        .tools-needed strong {
+            color: var(--orange);
+            font-size: 0.85rem;
+        }
+
+        .tools-needed {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ===== FOOTER ===== */
         footer {
+            background: #111;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(212, 101, 58, 0.1);
             text-align: center;
-            padding: 25px;
-            color: #888;
-            font-size: 0.85em;
-            margin-top: 30px;
+            color: var(--text-dim);
+            font-size: 0.85rem;
         }
-        @media (max-width: 400px) {
-            .container { padding: 20px 10px; }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-bottom: 1px solid rgba(212, 101, 58, 0.2);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 120px 20px 40px;
+            }
+
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-bar {
+                padding: 0 20px 30px;
+            }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--orange-dark);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--orange);
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>HardLife Repairs</h1>
-    <p>Fix It Yourself. Save Money.</p>
+    <!-- NAVIGATION -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="Store.html" class="store-link">Store</a>
-        <a href="guides.html">Guides</a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Images/logo.jpg" alt="HardLife Repairs" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-text">Hard<span>Life</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="Store.html">Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Store.html" class="nav-cta">Shop Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('active')">☰</button>
+        </div>
     </nav>
-</header>
 
-<div class="container">
-    <div class="intro">
-        <h2>DIY Repair Guides</h2>
-        <p>Real fixes for real people. No fancy words, no shop rates. Just step-by-step help that gets you back on the road, back in your house, or back to work.</p>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>DIY <span>Repair Guides</span></h1>
+        <p>Real fixes for real people. No fancy tools, no mechanic needed. Just step-by-step guides that save you hundreds.</p>
+    </section>
+
+    <!-- CATEGORY FILTER -->
+    <div class="filter-bar">
+        <button class="filter-btn active">All Guides</button>
+        <button class="filter-btn">ATV & Machine</button>
+        <button class="filter-btn">Home Fixes</button>
+        <button class="filter-btn">Tool Guides</button>
+        <button class="filter-btn">Outdoor Gear</button>
     </div>
 
-  <!-- Guide 1: ATV Starter Solenoid -->
-<div class="guide-card" id="atv-solenoid">
-    <a href="guides/atv-starter-solenoid.html" style="text-decoration:none;color:inherit;">
-        <h3>How to Test and Replace a Starter Solenoid on Any ATV</h3>
-        <p>ATV clicks but won't start? $15 fix in 20 minutes. Save $150 in shop fees. Step-by-step with photos.</p>
-        <div class="tools-needed">
-            <strong>What You Need:</strong> Multimeter, 10mm wrench, replacement solenoid ($12-25)
+    <!-- GUIDES GRID -->
+    <section class="guides-section">
+        <div class="guides-grid">
+
+            <!-- Guide 1: ATV Starter Solenoid -->
+            <a href="guides/atv-starter-solenoid.html" class="guide-card">
+                <span class="guide-tag">ATV & Machine Repair</span>
+                <h3>How to Test and Replace a Starter Solenoid on Any ATV</h3>
+                <p>ATV clicks but won't start? $15 fix in 20 minutes. Save $150 in shop fees. Works on Yamaha, Honda, Polaris, and Chinese quads.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 20 min</span>
+                    <span>💰 Saves $150</span>
+                    <span>🛠️ Easy</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>What You Need:</strong> Multimeter, 10mm wrench, replacement solenoid ($12-25)
+                </div>
+            </a>
+
+            <!-- Guide 2: Dryer Not Heating -->
+            <a href="guides/dryer-not-heating.html" class="guide-card">
+                <span class="guide-tag">Home Fixes</span>
+                <h3>Dryer Not Heating? Fix It in 45 Minutes</h3>
+                <p>Replace heating element, thermal fuse, or thermostat. Save $200+ vs shop repair. Works on Whirlpool, Kenmore, Maytag, Samsung, and GE.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 45 min</span>
+                    <span>💰 Saves $200</span>
+                    <span>🛠️ Easy</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>What You Need:</strong> Screwdrivers, multimeter, replacement part ($15-30)
+                </div>
+            </a>
+
+            <!-- Guide 3: Multimeter Tutorial -->
+            <a href="guides/how-to-use-multimeter.html" class="guide-card">
+                <span class="guide-tag">Tool Guides</span>
+                <h3>How to Use a Multimeter for Beginners</h3>
+                <p>Test voltage, continuity, and resistance like a pro in 20 minutes. No electrical experience needed. The most useful $50 tool you can own.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 20 min to learn</span>
+                    <span>💰 Saves $100s</span>
+                    <span>🛠️ Beginner</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>What You Need:</strong> Digital multimeter ($40-60)
+                </div>
+            </a>
+
+            <!-- Guide 4: Flat Tire -->
+            <a href="#" class="guide-card">
+                <span class="guide-tag">ATV & Machine Repair</span>
+                <h3>How to Change a Flat Tire on Any Vehicle</h3>
+                <p>Step-by-step for cars, trucks, and ATVs. Safe jack placement, lug nut tricks, and spare tire tips.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 15 min</span>
+                    <span>💰 Saves $50</span>
+                    <span>🛠️ Easy</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>What You Need:</strong> Jack, lug wrench, spare tire
+                </div>
+            </a>
+
+            <!-- Guide 5: Deadbolt Lock -->
+            <a href="#" class="guide-card">
+                <span class="guide-tag">Home Fixes</span>
+                <h3>How to Change a Deadbolt Door Lock</h3>
+                <p>Upgrade your home security in 30 minutes. Remove old lock, install new one, align the strike plate.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 30 min</span>
+                    <span>💰 Saves $80</span>
+                    <span>🛠️ Easy</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>What You Need:</strong> Screwdriver, new deadbolt kit ($25-40)
+                </div>
+            </a>
+
+            <!-- Guide 6: ATV Carburetor -->
+            <a href="#" class="guide-card">
+                <span class="guide-tag">ATV & Machine Repair</span>
+                <h3>How to Clean and Adjust a 4-Wheeler Carburetor</h3>
+                <p>Bogging, hard starts, or rough idle? Clean the carb and get back on the trail. Full teardown and rebuild.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 60 min</span>
+                    <span>💰 Saves $100</span>
+                    <span>🛠️ Medium</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>What You Need:</strong> Carb cleaner, screwdriver set, compressed air
+                </div>
+            </a>
+
         </div>
-    </a>
-</div>
+    </section>
 
-<!-- Guide 2: Dryer Not Heating -->
-<div class="guide-card" id="dryer-heat">
-    <a href="guides/dryer-not-heating.html" style="text-decoration:none;color:inherit;">
-        <h3>Dryer Not Heating? Fix It in 45 Minutes</h3>
-        <p>Replace heating element, thermal fuse, or thermostat. Save $200+ vs shop repair. Works on all major brands.</p>
-        <div class="tools-needed">
-            <strong>What You Need:</strong> Screwdrivers, multimeter, replacement part ($15-30)
-        </div>
-    </a>
-</div>
+    <!-- FOOTER -->
+    <footer>
+        <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program.</p>
+        <p>© 2026 HardLife Repairs. Built from real-world experience fixing what had to be fixed.</p>
+    </footer>
 
-<!-- Guide 3: Multimeter Tutorial -->
-<div class="guide-card" id="multimeter">
-    <a href="guides/how-to-use-multimeter.html" style="text-decoration:none;color:inherit;">
-        <h3>How to Use a Multimeter for Beginners</h3>
-        <p>Test voltage, continuity, and resistance like a pro in 20 minutes. No electrical experience needed.</p>
-        <div class="tools-needed">
-            <strong>What You Need:</strong> Digital multimeter ($40-60)
-        </div>
-    </a>
-</div>
+</body>
+</html>'''
 
+with open('/mnt/agents/output/guides.html', 'w', encoding='utf-8') as f:
+    f.write(guides_html)
 
-    <!-- Guide 4: Welder Setup -->
-    <div class="guide-card" id="welder-setup">
-        <h3>How to Set Up Your Welder</h3>
-        <div class="tools-needed">
-            <strong>What You Need:</strong> Welder, welding helmet, gloves, thick long-sleeve shirt, welding wire or rods, ground clamp, metal practice pieces
-        </div>
-        <ol>
-            <li><strong>Plug it in right.</strong> Check your welder plug. If it is a big 220V plug, you need a dryer outlet or welder outlet. If it is a regular 110V plug, any wall outlet works but do not run extension cords longer than 25 feet.</li>
-            <li><strong>Set up outside or in a garage with the door open.</strong> Welding makes toxic smoke. You need airflow. No welding in a closed basement.</li>
-            <li><strong>Put on your gear.</strong> Helmet down, gloves on, long sleeves buttoned, pants over your boots. One sunburn from welding flash and you will never skip this step again.</li>
-            <li><strong>Clamp the ground.</strong> The ground clamp must touch clean bare metal. Rust, paint, or grease will make your arc jump and sputter. Grind a spot if you have to.</li>
-            <li><strong>Load your wire or rod.</strong> For MIG: open the side panel, feed the wire through the liner, into the torch. Tighten the rollers so they grip but do not crush the wire. For stick: clamp the rod in the stinger.</li>
-            <li><strong>Set your heat.</strong> Look at the chart inside your welder lid or manual. Thinner metal = lower amps. Thicker metal = higher amps. When in doubt, start low and turn up if the weld looks cold and tall.</li>
-            <li><strong>Set your wire speed.</strong> MIG only. The rule is: the crackling should sound like frying bacon. If it pops and spits, wire speed is too high. If the wire melts back to the tip and sticks, speed is too low.</li>
-            <li><strong>Practice on scrap.</strong> Hold the torch at a 45-degree angle, drag it slowly toward you. Watch the puddle — it should be shiny and smooth, not bumpy or full of holes.</li>
-        </ol>
-        <div class="tip">
-            <strong>HardLife Tip:</strong> Your first welds will look like bird poop. That is normal. Everyone starts there. Keep practicing on scrap until you can lay a straight bead before touching your real project.
-        </div>
-    </div>
-  
-      <!-- Guide 5: Welding for Dummies -->
-      <div class="guide-card" id="welding-basics">
-        <h3>Welding for Dummies: The Basics</h3>
-        <div class="tools-needed">
-            <strong>What You Need:</strong> Same as above — helmet, gloves, long sleeves, and a willingness to burn yourself a few times
-        </div>
-        <p><strong>What is welding?</strong> It is using electricity to melt metal together. Think of it as a hot glue gun for steel. The electricity creates an arc — a super hot spark — that melts the base metal and the filler metal (wire or rod) into one solid piece.</p>
-        
-        <h4 style="margin: 15px 0 10px; color: #d32f2f;">The 3 Main Types</h4>
-        <ul>
-            <li><strong>MIG (Wire Welding):</strong> Easiest for beginners. You pull a trigger and wire feeds out automatically. Good for thin metal, auto body, and fences.</li>
-            <li><strong>Stick (Arc Welding):</strong> Cheapest and most portable. You hold a rod and scratch it like a match to start the arc. Messier but works on thick metal and rusty stuff.</li>
-            <li><strong>TIG:</strong> Precise and clean, but hard to learn. You hold a torch in one hand and feed filler rod with the other. Used for aluminum and pretty welds.</li>
-        </ul>
+print("✅ Complete dark guides.html saved")
+print(f"📄 Size: {len(guides_html)} characters")
+print("\n🔧 This file is COMPLETE and ready to replace your old white guides.html")
+print("   - Dark theme matching homepage")
+print("   - Working mobile menu")
+print("   - 6 guide cards with new detailed guides linked")
 
-        <h4 style="margin: 15px 0 10px; color: #d32f2f;">Safety Rules (Do Not Skip)</h4>
-        <ul>
-            <li>Wear a helmet with at least a #10 shade lens. #11 or #12 is better for stick.</li>
-            <li>Never weld without gloves. The UV light will give you a sunburn and the metal is 3000+ degrees.</li>
-            <li>Weld in a ventilated area. The smoke contains manganese and other metals that mess up your brain over time.</li>
-            <li>Keep a fire extinguisher nearby. Sparks fly 15-20 feet and will light up paper, gas cans, or dry grass.</li>
-            <li>Do not look at the arc without a helmet. Even a quick glance can damage your eyes.</li>
-        </ul>
-
-        <h4 style="margin: 15px 0 10px; color: #d32f2f;">Reading Your Weld</h4>
-        <ul>
-            <li><strong>Good weld:</strong> Smooth, flat, straight lines that look like stacked dimes.</li>
-            <li><strong>Too hot:</strong> Thin, burned holes, lots of spatter. Turn down the heat.</li>
-            <li><strong>Too cold:</strong> Tall, bumpy, sitting on top of the metal like a worm. Turn up the heat or slow down.</li>
-            <li><strong>Dirty metal:</strong> Porosity — little holes everywhere. Grind the rust off and try again.</li>
-        </ul>
-
-        <div class="tip">
-            <strong>HardLife Tip:</strong> Buy 10 pounds of scrap steel from a junkyard or metal yard. Practice running straight beads until you can do it with your eyes closed. Then practice making T-joints and butt joints. Do not touch your real project until you can lay a decent bead every time.
-        </div>
-    </div>
-
-</div>
-
-<footer>
-    <p>HardLife Repairs &copy; 2026 | Fix It
 
 
