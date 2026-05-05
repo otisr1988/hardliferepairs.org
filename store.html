@@ -3,308 +3,533 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store - HardLife Repairs</title>
-    <meta name="description" content="Best repair tools and gear for DIY mechanics. Multimeters, winches, welders, tool sets. Amazon affiliate links at no extra cost to you.">
+    <title>HardLife Tool Store | Professional Tools for Mechanics, Welders & DIY</title>
+    <meta name="description" content="Shop professional-grade tools for small engine repair, welding, electrical work, and home DIY. Hand-picked by real mechanics. Amazon affiliate store with honest reviews.">
+    <meta name="keywords" content="mechanic tools, welding equipment, small engine repair tools, electrical tools, DIY tools, tow straps, winches, multimeters, torque wrenches, chainsaws, cordless drills, welding helmets, welding rods, tool sets, off-road recovery, carb cleaner, solenoids, HardLife Repairs">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1A1A1A;
-            color: #E0E0E0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
             line-height: 1.6;
         }
-        header {
-            background: #111;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #D4653A;
+        
+        /* Navigation */
+        nav {
+            background-color: #2d2d2d;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 3px solid #ff6b35;
         }
-        .logo {
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6b35;
             text-decoration: none;
         }
-        .logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 5px;
-        }
-        .logo-text {
-            color: #fff;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-        .logo-text span {
-            color: #D4653A;
-        }
-        .desktop-nav {
+        
+        .nav-links {
             display: flex;
-            gap: 25px;
+            list-style: none;
+            gap: 30px;
         }
-        .desktop-nav a {
-            color: #ccc;
+        
+        .nav-links a {
+            color: #e0e0e0;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        .desktop-nav a:hover {
-            color: #D4653A;
+        
+        .nav-links a:hover {
+            color: #ff6b35;
         }
-        .desktop-nav a.active {
-            color: #D4653A;
-        }
-        .menu-btn {
+        
+        /* Mobile Menu */
+        .mobile-nav {
             display: none;
-            background: none;
-            border: none;
-            color: #D4653A;
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-        #mobileNav {
-            display: none;
-            background: #111;
-            border-bottom: 2px solid #D4653A;
+            background-color: #2d2d2d;
+            padding: 15px;
             text-align: center;
-            padding: 10px 0;
         }
-        #mobileNav a {
+        
+        .mobile-nav a {
             display: block;
-            color: #ccc;
+            color: #e0e0e0;
             text-decoration: none;
-            padding: 12px;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #333;
+            padding: 10px;
+            border-bottom: 1px solid #444;
         }
-        #mobileNav a:hover {
-            color: #D4653A;
-            background: #1a1a1a;
+        
+        /* Banner */
+        .banner {
+            width: 100%;
+            max-height: 300px;
+            overflow: hidden;
         }
-        #mobileNav a.active {
-            color: #D4653A;
+        
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: linear-gradient(180deg, #1A1A1A 0%, #222 100%);
-        }
-        .hero h1 {
-            font-size: 2.2rem;
-            color: #fff;
-            margin-bottom: 15px;
-        }
-        .hero h1 span {
-            color: #D4653A;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        
+        /* Main Content */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        .disclaimer {
-            background: #222;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 40px;
+        
+        h1 {
+            color: #ff6b35;
+            font-size: 36px;
+            margin-bottom: 10px;
             text-align: center;
-            border: 1px solid #333;
         }
-        .disclaimer p {
-            color: #aaa;
-            font-size: 0.9rem;
+        
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 40px;
+            font-size: 18px;
         }
-        .disclaimer a {
-            color: #D4653A;
+        
+        /* SEO Text */
+        .seo-text {
+            background-color: #2d2d2d;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            border-left: 4px solid #ff6b35;
         }
-        .category {
-            margin-bottom: 50px;
+        
+        .seo-text h2 {
+            color: #ff6b35;
+            font-size: 22px;
+            margin-bottom: 15px;
         }
-        .category-title {
-            color: #D4653A;
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #333;
+        
+        .seo-text p {
+            color: #bbb;
+            margin-bottom: 10px;
         }
+        
+        /* Category Tags */
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
+        .tag {
+            background-color: #2d2d2d;
+            color: #ff6b35;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid #ff6b35;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        /* Product Grid */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
+        
         .product-card {
-            background: #222;
+            background-color: #2d2d2d;
             border-radius: 10px;
             overflow: hidden;
-            border: 1px solid #333;
+            border: 2px solid #444;
             transition: transform 0.3s, border-color 0.3s;
+            display: flex;
+            flex-direction: column;
         }
+        
         .product-card:hover {
             transform: translateY(-5px);
-            border-color: #D4653A;
+            border-color: #ff6b35;
         }
-        .product-images {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-            background: #1a1a1a;
-        }
-        .product-images img {
+        
+        .product-image {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
-            transition: opacity 0.3s;
+            display: block;
+            background-color: #1a1a1a;
         }
-        .product-images img.img-2 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-        }
-        .product-images:hover img.img-1 {
-            opacity: 0;
-        }
-        .product-images:hover img.img-2 {
-            opacity: 1;
-        }
+        
         .product-info {
             padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-        .product-info h3 {
-            color: #fff;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+        
+        .product-title {
+            font-size: 20px;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
-        .product-info p {
-            color: #aaa;
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-            line-height: 1.4;
+        
+        .product-description {
+            color: #bbb;
+            margin-bottom: 15px;
+            font-size: 14px;
+            flex-grow: 1;
         }
-        .price {
-            color: #D4653A;
-            font-size: 1.3rem;
+        
+        .product-keywords {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .product-price {
+            font-size: 24px;
+            color: #4CAF50;
             font-weight: bold;
-            margin-bottom: 12px;
-            display: block;
+            margin-bottom: 15px;
         }
-        .amazon-btn {
+        
+        .buy-button {
             display: inline-block;
-            background: #D4653A;
-            color: #fff;
+            background-color: #ff6b35;
+            color: white;
+            padding: 12px 30px;
             text-decoration: none;
-            padding: 10px 20px;
             border-radius: 5px;
             font-weight: bold;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-        }
-        .amazon-btn:hover {
-            background: #b8552e;
-        }
-        .placeholder-img {
-            height: 220px;
-            background: #2a2a2a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #D4653A;
-            font-weight: bold;
-            font-size: 0.9rem;
+            transition: background-color 0.3s;
+            width: 100%;
             text-align: center;
-            padding: 20px;
+            margin-top: auto;
         }
+        
+        .buy-button:hover {
+            background-color: #e55a2b;
+        }
+        
+        /* Footer */
         footer {
-            background: #111;
+            background-color: #2d2d2d;
             text-align: center;
-            padding: 30px 20px;
-            border-top: 2px solid #D4653A;
-            margin-top: 40px;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 3px solid #ff6b35;
         }
+        
         footer p {
-            color: #666;
-            font-size: 0.85rem;
-            margin-bottom: 5px;
+            color: #888;
+            margin: 5px 0;
         }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .desktop-nav { display: none; }
-            .menu-btn { display: block; }
-            .hero h1 { font-size: 1.6rem; }
-            .product-grid { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo">
-            <img src="images/logo.jpg" alt="HardLife Repairs Logo">
-            <span class="logo-text">Hard<span>Life</span></span>
-        </a>
-        <nav class="desktop-nav">
-            <a href="index.html">Home</a>
-            <a href="guides.html">Guides</a>
-            <a href="store.html" class="active">Store</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-    </header>
-
-    <div id="mobileNav">
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🔧 HardLife Repairs</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
         <a href="index.html">Home</a>
-        <a href="guides.html">Guides</a>
-        <a href="store.html" class="active">Store</a>
+        <a href="store.html">Store</a>
         <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
     </div>
 
-    <section class="hero">
-        <h1>RECOMMENDED <span>TOOLS</span> & GEAR</h1>
-        <p>These are the same tools we use in our repair guides. Buy through our links and support the site at no extra cost.</p>
-    </section>
+    <!-- Banner -->
+    <div class="banner">
+        <img src="images/store-banner.png" alt="HardLife Repairs Professional Tool Store Banner">
+    </div>
 
+    <!-- Main Content -->
     <div class="container">
-
-        <div class="disclaimer">
-            <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program. We earn from qualifying purchases. <a href="#" style="color:#D4653A;">Learn more</a></p>
+        <h1>HardLife Professional Tool Store</h1>
+        <p class="subtitle">Real tools tested by real mechanics. Every product earns its place in the garage.</p>
+        
+        <!-- SEO Text for Google -->
+        <div class="seo-text">
+            <h2>Professional Tools for Mechanics, Welders & DIY Enthusiasts</h2>
+            <p>Welcome to the HardLife Repairs tool store - your source for professional-grade mechanic tools, welding equipment, small engine repair supplies, and electrical testing gear. We hand-pick every product based on real-world performance in the shop, not marketing hype.</p>
+            <p>Whether you are rebuilding a lawnmower engine, wiring a new outlet, welding a trailer hitch, or recovering a stuck ATV, these are the tools that get the job done. Free shipping on most items through Amazon Prime.</p>
         </div>
-
-        <div class="category">
-            <h2 class="category-title">Electrical & Testing</h2>
-            <div class="product-grid">
-
-                <div class="product-card">
-                    <div class="product-images">
-                        <img src="images/klein-mm420-1.jpg" alt="Klein Digital Multimeter" class="img-1">
-                        <img src="images/klein-mm420-2.jpg" alt="Klein Digital Multimeter" class="img-2">
-                    </div>
-                    <div class="product-info">
-                        <h3>KLEIN DIGITAL MULTI-METER</h3>
-                        <p>Auto-ranging multimeter for electrical troubleshooting. Tests voltage, continuity, and resistance. Essential for any repair kit.</p>
-                        <span class="price">$49.99</span>
-                        <a href="https://amzn.to/3OVEdvU" class="amazon-btn" target="_blank">View on Amazon</a>
-                    </div>
+        
+        <!-- Category Tags -->
+        <div class="category-tags">
+            <span class="tag">🔧 Small Engines</span>
+            <span class="tag">🔥 Welding</span>
+            <span class="tag">⚡ Electrical</span>
+            <span class="tag">🚙 Off-Road</span>
+            <span class="tag">🛠️ Hand Tools</span>
+            <span class="tag">🏠 Home DIY</span>
+        </div>
+        
+        <div class="product-grid">
+            
+            <!-- Product 1: HORUSDY Tow Strap -->
+            <div class="product-card">
+                <img src="images/horusdy-towstrap-1.jpg" alt="HORUSDY Heavy Duty Tow Strap Recovery Kit 32000 LBS" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">HORUSDY Heavy Duty Tow Strap Recovery Kit</h3>
+                    <p class="product-description">32,000 lbs break strength tow strap with hooks and D-ring shackles. 3 inch x 30 foot heavy duty recovery strap for trucks, ATVs, and off-road vehicles stuck in mud or snow. Essential off-road recovery gear.</p>
+                    <p class="product-keywords">tow strap, recovery strap, off-road recovery, vehicle recovery, tow rope, 4x4 recovery</p>
+                    <div class="product-price">$59.99</div>
+                    <a href="https://amzn.to/3OWsiOz" class="buy-button" target="_blank">Buy on Amazon</a>
                 </div>
+            </div>
+            
+            <!-- Product 2: Rhino USA D Ring Shackles -->
+            <div class="product-card">
+                <img src="images/rhino-shackles-1.jpg" alt="Rhino USA D Ring Shackles 41850lb Break Strength" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Rhino USA D Ring Shackles (2-Pack)</h3>
+                    <p class="product-description">41,850 lb break strength heavy duty 3/4 inch clevis shackles with 7/8 inch pin. Powder-coated chromoly steel construction with rubber isolators. Perfect for towing and off-road vehicle recovery.</p>
+                    <p class="product-keywords">D ring shackles, clevis shackles, tow shackles, off-road shackles, recovery shackles, 4x4 accessories</p>
+                    <div class="product-price">$29.99</div>
+                    <a href="https://amzn.to/49uVjYu" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 3: ARCCAPTAIN Welding Helmet -->
+            <div class="product-card">
+                <img src="images/arccaptain-helmet-1.jpg" alt="ARCCAPTAIN Auto Darkening Welding Helmet with Light" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">ARCCAPTAIN Auto Darkening Welding Helmet</h3>
+                    <p class="product-description">Large view 3.94 x 3.66 inch true color auto darkening welding helmet with built-in LED light. Solar powered with 4 arc sensors. Wide shade range 4/5-9/9-13 for stick, MIG, TIG, and plasma cutting.</p>
+                    <p class="product-keywords">welding helmet, auto darkening helmet, welding hood, MIG welding helmet, TIG welding helmet, welding mask</p>
+                    <div class="product-price">$89.99</div>
+                    <a href="https://amzn.to/4cZW9gY" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 4: ARCCAPTAIN E7018 Welding Rods -->
+            <div class="product-card">
+                <img src="images/arccaptain-rods-1.jpg" alt="ARCCAPTAIN E7018 Welding Rod 1/8 inch 10LB" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">ARCCAPTAIN E7018 Welding Rods 1/8" 10LB</h3>
+                    <p class="product-description">Low hydrogen carbon steel welding electrodes. E7018 1/8 inch diameter, 10 pound pack. Perfect for structural welding, pipe welding, and general fabrication. Easy slag removal with strong, clean welds.</p>
+                    <p class="product-keywords">welding rods, E7018 electrodes, stick welding rods, arc welding rods, welding sticks, carbon steel electrodes</p>
+                    <div class="product-price">$34.99</div>
+                    <a href="https://amzn.to/49rY4K2" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 5: LLNDEI 151 Piece Ratchet Wrench Tool Set -->
+            <div class="product-card">
+                <img src="images/llndei-toolset-1.jpg" alt="LLNDEI 151 Piece Ratchet Wrench Tool Set SAE and Metric" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">LLNDEI 151 Piece Ratchet Wrench Tool Set</h3>
+                    <p class="product-description">Complete mechanic tool kit with 1/4 and 3/8 inch drive ratchets. Includes SAE and metric 6-point sockets, combination wrenches, bits, and universal joint adapter. Everything you need for automotive and small engine repair.</p>
+                    <p class="product-keywords">mechanic tool set, socket set, ratchet set, wrench set, automotive tools, small engine tools</p>
+                    <div class="product-price">$79.99</div>
+                    <a href="https://amzn.to/4d6QxBu" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 6: AEROFORCE Torque Wrench Set -->
+            <div class="product-card">
+                <img src="images/aeroforce-torque-1.jpg" alt="AEROFORCE 3Pcs Click Torque Wrench Set" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">AEROFORCE 3Pcs Click Torque Wrench Set</h3>
+                    <p class="product-description">Professional torque wrench set with 1/4, 3/8, and 1/2 inch drives. Ranges: 4-20 ft.lb, 5-45 ft.lb, and 15-165 ft.lb. 72-tooth dual scale design perfect for bikes, motorcycles, and car repair. Easy torque adjustment with clear markings.</p>
+                    <p class="product-keywords">torque wrench, click torque wrench, torque wrench set, automotive torque wrench, bike torque wrench, mechanic tools</p>
+                    <div class="product-price">$69.99</div>
+                    <a href="https://amzn.to/4tRsgGZ" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 7: DEWALT 20V MAX Drill Combo -->
+            <div class="product-card">
+                <img src="images/dewalt-drill-1.jpg" alt="DEWALT 20V MAX Cordless Drill and Impact Driver Combo Kit" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">DEWALT 20V MAX Drill & Impact Driver Combo</h3>
+                    <p class="product-description">Professional cordless power tool combo kit includes DCD771 drill and DCF885 impact driver. Comes with 2 batteries, charger, and contractor bag. Perfect for home DIY, construction, and automotive projects.</p>
+                    <p class="product-keywords">cordless drill, impact driver, DEWALT drill, power tool combo, 20V drill, home improvement tools</p>
+                    <div class="product-price">$149.99</div>
+                    <a href="https://amzn.to/4utMkPx" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 8: 12V Solenoid -->
+            <div class="product-card">
+                <img src="images/solenoid-1.jpg" alt="Upgrade Max 300A 12 Volt Solenoid for Golf Carts Winch Marine" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">300A 12V Heavy Duty Solenoid</h3>
+                    <p class="product-description">Nickel-plated 12 volt solenoid with max 300A in-rush current. Heavy duty replacement for golf carts, winches, and marine applications. Reliable switching for high-amperage DC circuits.</p>
+                    <p class="product-keywords">12V solenoid, winch solenoid, golf cart solenoid, heavy duty solenoid, starter solenoid, DC solenoid</p>
+                    <div class="product-price">$19.99</div>
+                    <a href="https://amzn.to/4uahImx" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 9: Gumout Carb Cleaner -->
+            <div class="product-card">
+                <img src="images/gumout-carb-1.jpg" alt="Gumout Carb and Choke Cleaner Jet Spray 16 oz" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Gumout Carb & Choke Cleaner 16 oz</h3>
+                    <p class="product-description">Professional-grade jet spray carburetor and choke cleaner. Removes gum, varnish, and carbon deposits fast. Helps stop hard starting and rough idling. Essential for small engine maintenance and repair.</p>
+                    <p class="product-keywords">carb cleaner, carburetor cleaner, choke cleaner, small engine cleaner, Gumout, engine maintenance</p>
+                    <div class="product-price">$8.99</div>
+                    <a href="https://amzn.to/3OM67up" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 10: Stihl MS 162 Chainsaw -->
+            <div class="product-card">
+                <img src="images/stihl-chainsaw-1.jpg" alt="Stihl MS 162 Chainsaw 30 cm Light" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Stihl MS 162 Chainsaw 30cm</h3>
+                    <p class="product-description">Lightweight and powerful Stihl chainsaw with anti-vibration system and side-access chain tensioner. Master control lever for easy operation. Perfect for firewood cutting, pruning, and light tree work.</p>
+                    <p class="product-keywords">Stihl chainsaw, MS 162, lightweight chainsaw, firewood chainsaw, pruning saw, homeowner chainsaw</p>
+                    <div class="product-price">$299.99</div>
+                    <a href="https://amzn.to/3P3X3Rt" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 11: Klein Digital Multi-Meter -->
+            <div class="product-card">
+                <img src="images/klein-multimeter-1.jpg" alt="Klein Tools Digital Multi-Meter Auto-Ranging True RMS" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Klein Tools Digital Multi-Meter</h3>
+                    <p class="product-description">Professional auto-ranging digital multimeter with True RMS measurement technology. 600V CAT III rated. Measures AC/DC voltage, current, resistance, continuity, frequency, capacitance, and temperature. Built to withstand drops and jobsite abuse.</p>
+                    <p class="product-keywords">digital multimeter, Klein multimeter, True RMS multimeter, electrical tester, voltage tester, electrician tools</p>
+                    <div class="product-price">$49.99</div>
+                    <a href="https://amzn.to/3OVEdvU" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 12: Fluke SmarTrace BK120 -->
+            <div class="product-card">
+                <img src="images/fluke-bk120-1.jpg" alt="Fluke SmarTrace BK120 Circuit Breaker Finder" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Fluke SmarTrace BK120 Breaker Finder</h3>
+                    <p class="product-description">Professional circuit breaker finder with GFCI testing capability. Quickly locate the correct breaker for any outlet without guessing. Essential tool for electricians and home electrical troubleshooting.</p>
+                    <p class="product-keywords">circuit breaker finder, breaker locator, Fluke BK120, electrical tester, outlet tester, electrician tools</p>
+                    <div class="product-price">$89.99</div>
+                    <a href="https://amzn.to/4sON4gL" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 13: ARCCAPTAIN Welder -->
+            <div class="product-card">
+                <img src="images/arccaptain-welder-1.jpg" alt="ARCCAPTAIN MIG Welder 200 Amp Multi-Process" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">ARCCAPTAIN MIG Welder 200A</h3>
+                    <p class="product-description">Multi-process MIG welder with digital display and 200 amp output. Supports MIG, flux-core, stick, and TIG welding. Built-in LED light, spot welding function, and burnback time adjustment. Compact and portable at only 21.4 lbs.</p>
+                    <p class="product-keywords">MIG welder, multi-process welder, ARCCAPTAIN welder, flux core welder, portable welder, home welder</p>
+                    <div class="product-price">$349.99</div>
+                    <a href="https://amzn.to/41Tr09O" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 14: Lincoln Welder -->
+            <div class="product-card">
+                <img src="images/lincoln-welder-1.jpg" alt="Lincoln Electric Weld-Pak 90i FC Flux Core Welder" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Lincoln Electric Weld-Pak 90i FC</h3>
+                    <p class="product-description">Compact flux-core wire feed welder from Lincoln Electric. Perfect for beginners and light fabrication projects. Easy setup with infinite voltage control. Runs on standard 120V household power. Great for auto body repair and home projects.</p>
+                    <p class="product-keywords">Lincoln welder, flux core welder, wire feed welder, beginner welder, home welder, Lincoln Electric</p>
+                    <div class="product-price">$399.99</div>
+                    <a href="https://amzn.to/4e110AG" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 15: Warn VR EVO Winch -->
+            <div class="product-card">
+                <img src="images/warn-winch-1.jpg" alt="Warn VR EVO Winch Off-Road Recovery" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Warn VR EVO Winch</h3>
+                    <p class="product-description">Premium off-road recovery winch from Warn - the most trusted name in winching. Waterproof construction with high-speed motor. Reliable performance for trucks, Jeeps, and ATVs in the toughest conditions.</p>
+                    <p class="product-keywords">Warn winch, VR EVO winch, off-road winch, truck winch, Jeep winch, recovery winch, 4x4 winch</p>
+                    <div class="product-price">$599.99</div>
+                    <a href="https://amzn.to/4sOoo89" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+            <!-- Product 16: Smittybilt GEN 2 XRC Winch -->
+            <div class="product-card">
+                <img src="images/smittybilt-winch-1.jpg" alt="Smittybilt GEN 2 XRC Winch 9500 lb" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Smittybilt GEN 2 XRC Winch 9,500 lb</h3>
+                    <p class="product-description">Heavy-duty 9,500 pound winch with steel cable and wireless remote control. IP68 waterproof rating. Includes fairlead, hook, and all mounting hardware. Best value in off-road recovery winches for trucks and SUVs.</p>
+                    <p class="product-keywords">Smittybilt winch, XRC winch, 9500 lb winch, off-road winch, truck winch, wireless winch, recovery gear</p>
+                    <div class="product-price">$299.99</div>
+                    <a href="https://amzn.to/3QHgdNw" class="buy-button" target="_blank">Buy on Amazon</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- Bottom SEO Text -->
+        <div class="seo-text" style="margin-top: 50px;">
+            <h2>Why Shop HardLife Repairs Tool Store?</h2>
+            <p>Every product in our store has been tested or thoroughly researched by someone who actually works on engines, welds metal, and fixes things for a living. We do not recommend junk. We do not push products we would not use ourselves.</p>
+            <p>Our categories cover the essentials: small engine repair tools, welding machines and supplies, electrical testing equipment, off-road recovery gear, and professional hand tools. All orders ship through Amazon with Prime eligibility, fast delivery, and reliable customer service.</p>
+            <p>Keywords: mechanic tools, welding equipment, small engine repair, electrical tools, off-road recovery, tow straps, winches, multimeters, torque wrenches, chainsaws, cordless drills, welding helmets, welding rods, tool sets, carb cleaner, solenoids, circuit breaker finder</p>
+        </div>
+    </div>
 
-                <div class="product-card">
-                    <div class="product-images">
-                        <img src="images/fluke-bk120-1.jpg" alt="Fluke Test Light" class="img-1">
-                        <img src="images/fluke-bk120-2.jpg" alt="Fluke Test Light" class="img-2">
-                    </div>
-                    <div class="product-info">
-                        <h3>HEAVY-DUTY CIRCUIT TEST LIGHT</h3>
-                        <p>6-24V test light for quick electrical checks. No batteries needed. Faster than a multimeter for simple power tests.</p>
-                        <span class="price">$12.99</span>
+    <!-- Footer -->
+    <footer>
+        <p>HardLife Repairs & Home DIY</p>
+        <p>Built with sweat, grease, and determination.</p>
+        <p>As an Amazon Associate, we earn from qualifying purchases.</p>
+        <p>&copy; 2026 HardLife Repairs. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
