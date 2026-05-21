@@ -1,13 +1,35 @@
-# Guide 1: ATV Starter Solenoid - High search volume, your actual expertise
-guide1 = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Test and Replace a Starter Solenoid on Any ATV (Step-by-Step) | HardLife Repairs</title>
-    <meta name="description" content="Fix your ATV that clicks but won't start. Step-by-step guide to test and replace a starter solenoid on Yamaha, Honda, Polaris, and Chinese quads. Save $150+ in shop fees.">
-    <meta name="keywords" content="ATV starter solenoid test, ATV clicks but wont start, starter solenoid replacement, Yamaha Grizzly starter, ATV electrical troubleshooting, how to test starter solenoid with multimeter">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>HardLife Tool Store | Professional Tools & Equipment for Repairs</title>
+    <meta name="description" content="Professional mechanic tools, welders, multimeters, and ATV gear tested by real technicians. Hand-picked tools for small engine repair, welding, electrical work, and DIY projects.">
+    <meta name="keywords" content="mechanic tools, welding equipment, digital multimeter, ATV gear, torque wrench, impact driver, professional tools, repair equipment">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="HardLife Tool Store - Professional Repair Tools">
+    <meta property="og:description" content="Hand-picked tools tested by real technicians. Everything you need for repairs.">
+    <meta property="og:url" content="https://hardliferepairs.org/store.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://hardliferepairs.org/store.html">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "HardLife Tool Store",
+      "description": "Professional tools and equipment for repairs",
+      "url": "https://hardliferepairs.org/store.html"
+    }
+    </script>
+
     <style>
         :root {
             --orange: #D4653A;
@@ -17,78 +39,71 @@ guide1 = """<!DOCTYPE html>
             --dark-card: #2A2A2A;
             --text: #E8E6E3;
             --text-muted: #9A9896;
-            --text-dim: #6A6866;
-            --max-width: 900px;
+            --max-width: 1200px;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--dark);
             color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
         }
-        h1, h2, h3, h4 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            line-height: 1.2;
-        }
+
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
             background: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(212, 101, 58, 0.15);
             z-index: 1000;
             padding: 0 24px;
         }
+
         .nav-container {
-            max-width: 1200px;
+            max-width: var(--max-width);
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 70px;
         }
+
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-        .logo-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 6px;
-            object-fit: cover;
-            border: 2px solid var(--orange);
-        }
-        .logo-text {
-            font-family: 'Oswald', sans-serif;
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--text);
-            letter-spacing: 0.05em;
+            text-decoration: none;
         }
-        .logo-text span { color: var(--orange); }
+
+        .logo span {
+            color: var(--orange);
+        }
+
         .nav-links {
             display: flex;
             align-items: center;
             gap: 32px;
             list-style: none;
         }
+
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
             transition: color 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
-        .nav-links a:hover { color: var(--orange); }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
         .nav-cta {
             background: var(--orange);
             color: #fff !important;
@@ -96,7 +111,7 @@ guide1 = """<!DOCTYPE html>
             border-radius: 4px;
             font-weight: 600;
         }
-        .nav-cta:hover { background: var(--orange-dark); }
+
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -105,509 +120,516 @@ guide1 = """<!DOCTYPE html>
             font-size: 1.5rem;
             cursor: pointer;
         }
-        .article {
+
+        .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 120px 24px 60px;
+            padding: 60px 24px;
         }
-        .article-header {
-            margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid rgba(212, 101, 58, 0.2);
-        }
-        .breadcrumbs {
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            margin-bottom: 16px;
-        }
-        .breadcrumbs a {
+
+        h1 {
             color: var(--orange);
-            text-decoration: none;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-align: center;
         }
-        .article-header h1 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
-            margin-bottom: 16px;
-            color: var(--text);
-        }
-        .article-meta {
-            display: flex;
-            gap: 20px;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-            flex-wrap: wrap;
-        }
-        .article-meta span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .difficulty {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(212, 101, 58, 0.15);
-            color: var(--orange);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 12px;
-        }
-        .intro-box {
-            background: var(--dark-lighter);
-            border-left: 4px solid var(--orange);
-            padding: 24px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .intro-box h3 {
-            color: var(--orange);
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-        .intro-box p {
+
+        .subtitle {
+            text-align: center;
             color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-        .tools-needed {
-            background: var(--dark-card);
-            border: 1px solid rgba(212, 101, 58, 0.15);
-            padding: 24px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-        .tools-needed h3 {
-            color: var(--orange);
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        .tools-needed ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 8px;
-        }
-        .tools-needed li {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            padding-left: 20px;
-            position: relative;
-        }
-        .tools-needed li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--orange);
-            font-weight: bold;
-        }
-        .step {
-            margin: 40px 0;
-            padding: 30px;
-            background: var(--dark-lighter);
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--orange);
-            color: #fff;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 50%;
-            margin-bottom: 16px;
-        }
-        .step h2 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-            color: var(--text);
-        }
-        .step p {
-            color: var(--text-muted);
-            margin-bottom: 12px;
-        }
-        .step-img {
-            width: 100%;
-            height: 300px;
-            background: var(--dark-card);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-dim);
-            margin: 16px 0;
-            border: 1px dashed rgba(212, 101, 58, 0.3);
-        }
-        .warning {
-            background: rgba(212, 101, 58, 0.1);
-            border: 1px solid rgba(212, 101, 58, 0.3);
-            padding: 16px 20px;
-            border-radius: 6px;
-            margin: 20px 0;
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-        .warning svg {
-            width: 24px;
-            height: 24px;
-            color: var(--orange);
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .warning p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        .pro-tip {
-            background: rgba(100, 200, 100, 0.1);
-            border: 1px solid rgba(100, 200, 100, 0.2);
-            padding: 16px 20px;
-            border-radius: 6px;
-            margin: 20px 0;
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-        }
-        .pro-tip svg {
-            width: 24px;
-            height: 24px;
-            color: #6bc96b;
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-        .pro-tip p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        .product-rec {
-            background: var(--dark-card);
-            border: 1px solid rgba(212, 101, 58, 0.2);
-            padding: 24px;
-            border-radius: 8px;
-            margin: 30px 0;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .product-rec-img {
-            width: 120px;
-            height: 120px;
-            background: var(--dark-lighter);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-            flex-shrink: 0;
-        }
-        .product-rec-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-        .product-rec-info p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-        .product-rec-price {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.3rem;
-            color: var(--orange);
-            margin-bottom: 8px;
-        }
-        .btn-small {
-            display: inline-block;
-            padding: 8px 20px;
-            background: var(--orange);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: background 0.2s;
-        }
-        .btn-small:hover { background: var(--orange-dark); }
-        .faq {
-            margin: 40px 0;
-        }
-        .faq h2 {
-            font-size: 1.6rem;
-            margin-bottom: 24px;
-            color: var(--text);
-        }
-        .faq-item {
-            background: var(--dark-lighter);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 12px;
-        }
-        .faq-item h3 {
-            font-size: 1.05rem;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-        .faq-item p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-        .related-guides {
-            margin: 50px 0;
-            padding-top: 30px;
-            border-top: 2px solid rgba(212, 101, 58, 0.2);
-        }
-        .related-guides h2 {
-            font-size: 1.4rem;
             margin-bottom: 20px;
-            color: var(--text);
+            font-size: 1.1rem;
         }
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 16px;
+
+        .affiliate-notice {
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 40px;
         }
-        .related-card {
+
+        .affiliate-notice a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        .intro-text {
             background: var(--dark-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 20px;
             border-radius: 8px;
-            text-decoration: none;
-            color: var(--text);
-            transition: all 0.3s;
+            padding: 30px;
+            margin-bottom: 50px;
+            border-left: 4px solid var(--orange);
         }
-        .related-card:hover {
-            border-color: var(--orange);
-            transform: translateY(-2px);
+
+        .intro-text h2 {
+            color: var(--orange);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
         }
-        .related-card h4 {
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
-        .related-card p {
+
+        .intro-text p {
             color: var(--text-muted);
-            font-size: 0.85rem;
+            margin-bottom: 12px;
         }
+
+        .category-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .tag {
+            background: var(--dark-card);
+            color: var(--orange);
+            padding: 10px 24px;
+            border-radius: 25px;
+            border: 1px solid var(--orange);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: var(--dark-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            border-color: var(--orange);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(212, 101, 58, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            background: var(--dark-lighter);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .amazon-badge {
+            display: inline-block;
+            background: #FF9900;
+            color: #232F3E;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .product-title {
+            font-size: 1.15rem;
+            color: var(--orange);
+            margin-bottom: 10px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .product-description {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background: var(--orange);
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.2s;
+            margin-top: auto;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-button:hover {
+            background: var(--orange-dark);
+        }
+
         footer {
             background: #111;
             padding: 40px 24px;
             border-top: 1px solid rgba(212, 101, 58, 0.1);
             text-align: center;
-            color: var(--text-dim);
+            color: #666;
             font-size: 0.85rem;
         }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
-            .article { padding: 100px 20px 40px; }
-            .step { padding: 20px; }
-            .product-rec { flex-direction: column; text-align: center; }
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="nav-container">
-            <a href="../index.html" class="logo">🔧 Hard<span>Life</span></a>
+            <a href="index.html" class="logo">🔧 Hard<span>Life</span></a>
             <ul class="nav-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../guides.html">Guides</a></li>
-                <li><a href="../store.html">Store</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../store.html" class="nav-cta">Shop Now</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="store.html" class="nav-cta">Shop Now</a></li>
             </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
         </div>
     </nav>
 
-<article class="article">
-    <div class="article-header">
-        <div class="breadcrumbs">
-            <a href="index.html">Home</a> → <a href="guides.html">Guides</a> → <a href="guides.html">ATV & Machine</a> → Starter Solenoid
-        </div>
-        <h1>How to Test and Replace a Starter Solenoid on Any ATV (Step-by-Step)</h1>
-        <div class="article-meta">
-            <span>📅 Updated April 2026</span>
-            <span>⏱️ 30 minutes</span>
-            <span>💰 Saves $120-180</span>
-            <span>🛠️ Beginner friendly</span>
-        </div>
-        <span class="difficulty">Difficulty: Easy</span>
-    </div>
-
-    <div class="intro-box">
-        <h3>Why This Guide Exists</h3>
-        <p>Your ATV clicks but won't turn over. The starter spins fine when you jump it directly. The battery reads 12.6 volts. Nine times out of ten, the starter solenoid is the culprit. Shops charge $150-200 to swap a $15 part that takes 20 minutes. This guide shows you exactly how to test it with a multimeter and replace it yourself — no special tools, no mechanic needed.</p>
-    </div>
-
-    <div class="tools-needed">
-        <h3>🛠️ What You Need</h3>
-        <ul>
-            <li>Digital multimeter (or test light)</li>
-            <li>10mm wrench or socket</li>
-            <li>Replacement solenoid ($12-25)</li>
-            <li>Dielectric grease (optional)</li>
-            <li>Phone/camera for reference photos</li>
-        </ul>
-    </div>
-
-    <div class="warning">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <p><strong>Safety first:</strong> Disconnect the negative battery terminal before working on any electrical component. ATVs have enough current to weld a wrench to the frame if you short positive to ground.</p>
-    </div>
-
-    <div class="step">
-        <div class="step-number">1</div>
-        <h2>Locate Your Starter Solenoid</h2>
-        <p>On most ATVs, the solenoid sits near the battery or along the frame rail between the battery and starter motor. It's a small cylinder (about 2 inches long) with two large posts and one or two small wires.</p>
-        <p><strong>Common locations by brand:</strong></p>
-        <p>• <strong>Yamaha Grizzly/Kodiak:</strong> Right side, near battery box<br>
-        • <strong>Honda Rancher/Recon:</strong> Under front fender, left side<br>
-        • <strong>Polaris Sportsman:</strong> Near radiator, right side<br>
-        • <strong>Chinese quads (TaoTao, Coolster):</strong> Beside battery tray</p>
-        <div class="step-img">[Photo: Solenoid location on Yamaha Grizzly 660]</div>
-        <div class="pro-tip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            <p><strong>Pro tip:</strong> Take a photo of the wiring before you disconnect anything. Color codes vary by year and model. A reference photo saves you from guessing later.</p>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">2</div>
-        <h2>Test the Solenoid With a Multimeter</h2>
-        <p>You don't need to remove it to test it. Set your multimeter to <strong>DC volts (20V range)</strong> and follow these checks:</p>
-        <p><strong>Test 1 — Power in:</strong> Red probe on the battery-side large post. Black probe on ground (frame bolt). Turn key to "start." You should see 12+ volts. If not, your problem is upstream — battery, ignition switch, or safety switches.</p>
-        <p><strong>Test 2 — Trigger wire:</strong> Red probe on the small wire terminal (usually spade connector). Black on ground. Turn key to start. You should see 12+ volts here too. No voltage means the solenoid isn't getting the signal to engage.</p>
-        <p><strong>Test 3 — Power out:</strong> Red probe on the starter-side large post. Black on ground. Turn key to start. If you have power going IN (Test 1) and trigger (Test 2) but nothing coming OUT here, the solenoid is dead.</p>
-        <div class="step-img">[Photo: Multimeter testing solenoid posts]</div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">3</div>
-        <h2>The Click Test (No Multimeter Needed)</h2>
-        <p>If you don't have a multimeter, use a screwdriver to jump the two large posts. Touch the metal shaft across both posts at the same time. If the starter spins and the engine cranks, your solenoid is definitely bad.</p>
-        <div class="warning">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-            <p><strong>Sparks will fly.</strong> This is normal — you're completing the circuit the solenoid should complete. Wear safety glasses and don't touch the frame with the screwdriver.</p>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">4</div>
-        <h2>Remove the Old Solenoid</h2>
-        <p>Disconnect the negative battery terminal first. Then:</p>
-        <p>1. Remove the two large cables (10mm nut). Battery cable first, then starter cable.<br>
-        2. Disconnect the small trigger wire(s). These usually pull straight off.<br>
-        3. Remove the mounting bolt (10mm). The solenoid will drop free.</p>
-        <p>Clean the cable ends with a wire brush if they're corroded. Green or white buildup means high resistance — even a new solenoid won't work right with dirty connections.</p>
-        <div class="step-img">[Photo: Removing cables from old solenoid]</div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">5</div>
-        <h2>Install the New Solenoid</h2>
-        <p>Mount the new solenoid in the same orientation. Reconnect in reverse order:</p>
-        <p>1. Mount bolt finger-tight<br>
-        2. Small trigger wire(s)<br>
-        3. Starter cable (large post)<br>
-        4. Battery cable (large post)<br>
-        5. Tighten everything to snug — don't overtighten<br>
-        6. Reconnect negative battery terminal</p>
-        <p>Apply a thin coat of dielectric grease to the small wire connection if you have it. This prevents corrosion.</p>
-        <div class="step-img">[Photo: New solenoid installed with cables connected]</div>
-    </div>
-
-    <div class="step">
-        <div class="step-number">6</div>
-        <h2>Test Your Fix</h2>
-        <p>Turn the key to "on." Hit the start button. The engine should crank immediately — no clicks, no delays. Let it run for 30 seconds, then shut it off and try again.</p>
-        <p>If it still clicks, check:<br>
-        • Battery voltage under load (should stay above 9.6V while cranking)<br>
-        • Ground connections (frame to engine block)<br>
-        • Starter motor itself (may be drawing too much current)</p>
-        <div class="pro-tip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-            <p><strong>Pro tip:</strong> If your ATV sits for months, the solenoid contacts can corrode from moisture. Start it weekly or install a battery disconnect switch to prevent drain.</p>
-        </div>
-    </div>
-
-    <div class="product-rec">
-        <div class="product-rec-img">
-            <img src="Images/klein-mm420-1.jpg" alt="Klein Multimeter" style="width:100%;height:100%;object-fit:cover;border-radius:6px;" onerror="this.parentElement.innerHTML='Klein MM420'">
-        </div>
-        <div class="product-rec-info">
-            <h4>Tool We Used: Klein MM420 Multimeter</h4>
-            <p>Auto-ranging, backlit display, tests volts, ohms, and continuity. The same one we use for every electrical repair on this site.</p>
-            <div class="product-rec-price">$49.99</div>
-            <a href="https://amzn.to/3OVEdvU" class="btn-small" target="_blank">Check Price on Amazon</a>
-        </div>
-    </div>
-
-    <div class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <h3>Can I use a car starter solenoid on my ATV?</h3>
-            <p>No. ATV solenoids are rated for lower amperage and have different mounting. A car solenoid may work temporarily but will overheat and fail. Buy the correct part for your model — they're $12-25.</p>
-        </div>
-        <div class="faq-item">
-            <h3>Why does my solenoid keep burning out?</h3>
-            <p>Three common causes: (1) Low battery voltage makes the solenoid chatter and overheat, (2) Starter motor is failing and drawing too much current, (3) Poor ground connection causes arcing at the contacts.</p>
-        </div>
-        <div class="faq-item">
-            <h3>My ATV clicks once then nothing. Is it the solenoid?</h3>
-            <p>One loud click usually means the solenoid is engaging but the starter isn't spinning. Test by jumping the large posts with a screwdriver. If the starter spins, replace the solenoid. If it doesn't, your starter motor is bad.</p>
-        </div>
-        <div class="faq-item">
-            <h3>How long does a starter solenoid last?</h3>
-            <p>5-10 years under normal use. They fail faster if the ATV sits unused (corrosion) or if the battery is weak (chattering). A $15 solenoid is cheap insurance — replace it proactively if yours is over 8 years old.</p>
-        </div>
-    </div>
-
-    <div class="related-guides">
-        <h2>Related Guides</h2>
-        <div class="related-grid">
-            <a href="#" class="related-card">
-                <h4>How to Test an ATV Ignition Coil</h4>
-                <p>No spark? Here's how to test your coil with a multimeter in 10 minutes.</p>
-            </a>
-            <a href="#" class="related-card">
-                <h4>ATV Battery Won't Hold Charge</h4>
-                <p>Diagnose charging system problems and fix them without a shop visit.</p>
-            </a>
-            <a href="#" class="related-card">
-                <h4>How to Clean a Carburetor on Any ATV</h4>
-                <p>Bogging, hard starts, or rough idle? Clean the carb and get back on the trail.</p>
-            </a>
-        </div>
-    </div>
-
-</article>
-
-    <footer>
-        <p>
-            <a href="../index.html">Home</a>
-            <a href="../guides.html">Guides</a>
-            <a href="../store.html">Store</a>
-            <a href="../about.html">About</a>
-            <a href="../contact.html">Contact</a>
-            <a href="../privacy.html">Privacy Policy</a>
-            <a href="../affiliate-disclosure.html">Affiliate Disclosure</a>
+    <div class="container">
+        
+        <h1>HardLife Professional Tool Store</h1>
+        <p class="subtitle">Real tools tested by real mechanics. Every product earns its place in the garage.</p>
+        
+        <p class="affiliate-notice">
+            As an Amazon Associate, we earn from qualifying purchases. See our <a href="affiliate-disclosure.html">Affiliate Disclosure</a> for details.
         </p>
-        <p style="margin-top: 12px;">HardLife Repairs is a participant in the Amazon Associates Program.</p>
-        <p style="margin-top: 8px;">&copy; 2026 HardLife Repairs. All rights reserved.</p>
+
+        <!-- Intro Section -->
+        <div class="intro-text">
+            <h2>Professional Tools for Mechanics & DIY Enthusiasts</h2>
+            <p>Welcome to the HardLife Repairs tool store - your source for the best mechanic tools, welding equipment, small engine repair supplies, and electrical testing gear. Every tool here has been tested or thoroughly researched by someone who actually works on engines, welds metal, and fixes things for a living.</p>
+            <p>Whether you're rebuilding a lawnmower engine, wiring a new outlet, welding a trailer hitch, recovering a stuck ATV, or replacing a broken part on your favorite equipment - these are the professional tools that get the job done right.</p>
+        </div>
+
+        <!-- Category Tags -->
+        <div class="category-tags">
+            <span class="tag">🔧 Small Engines</span>
+            <span class="tag">🔥 Welding</span>
+            <span class="tag">⚡ Electrical</span>
+            <span class="tag">🚙 Off-Road</span>
+            <span class="tag">🛠️ Hand Tools</span>
+            <span class="tag">🏠 Home DIY</span>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div class="product-grid">
+
+            <!-- Product 1: Tow Strap -->
+            <div class="product-card" id="tow-strap">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/710hf9x5XWL._AC_SY300_SX300_.jpg" alt="HORUSDY Heavy Duty Tow Strap with D Ring Shackles for vehicle recovery" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">HORUSDY Heavy Duty Tow Strap 32,000 LBS</h3>
+                    <p class="product-description">3" x 30ft nylon recovery strap with dual heavy-duty hooks and 2x 3/4" D-Ring shackles. 32,000 lbs break strength. Perfect for trucks, ATVs, and off-road recovery from mud, snow, and ditches. Includes reflective safety patches and storage bag.</p>
+                    <div class="product-price">$59.99</div>
+                    <a href="https://amzn.to/3OWsiOz" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 2: D Ring Shackles -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81e9kYkXtBL._AC_SY300_SX300_.jpg" alt="Rhino USA D Ring Shackles heavy duty clevis for towing" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Rhino USA D Ring Shackles 41,850 LB (2-Pack)</h3>
+                    <p class="product-description">Heavy-duty 3/4" clevis shackles with 7/8" pin. 41,850 lbs break strength rated. Powder-coated chromoly steel construction resists corrosion. Pairs perfectly with tow straps for secure vehicle recovery, winch rigging, and off-road use. Made in the USA.</p>
+                    <div class="product-price">$29.99</div>
+                    <a href="https://amzn.to/49uVjYu" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 3: Welding Helmet -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71SGRPNkc0L._AC_SY300_SX300_.jpg" alt="ARCCAPTAIN auto darkening welding helmet with LED light" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">ARCCAPTAIN Auto Darkening Welding Helmet</h3>
+                    <p class="product-description">Large 3.94" x 3.66" true color view. Auto darkening with 4 arc sensors and solar power backup. Built-in LED headlight for dark work areas. Shade range 4/5-9/9-13. Works with MIG, TIG, Stick, and Plasma cutting. Adjustable headgear and comfortable padding.</p>
+                    <div class="product-price">$89.99</div>
+                    <a href="https://amzn.to/4cZW9gY" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 4: Welding Rods -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71rGNTbQ8RL._AC_SY300_SX300_.jpg" alt="ARCCAPTAIN E7018 Welding Rods low hydrogen for structural welding" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">ARCCAPTAIN E7018 Welding Rods 1/8" 10LB</h3>
+                    <p class="product-description">Low hydrogen carbon steel welding electrodes. 1/8" diameter for general purpose and structural welding. 10 pound pack. Works on steel up to 1/2" thick. Excellent penetration and minimal slag. Perfect for beginners and professionals.</p>
+                    <div class="product-price">$34.99</div>
+                    <a href="https://amzn.to/49rY4K2" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 5: Tool Set -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81NQxI+EjHL._AC_SY300_SX300_.jpg" alt="LLNDEI 151 Piece mechanic tool set with ratchet wrenches" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">LLNDEI 151 Piece Ratchet Wrench Tool Set</h3>
+                    <p class="product-description">Complete mechanic tool kit with 1/4" and 3/8" drive ratchets. Includes SAE and metric 6-point sockets, combination wrenches, bits, universal joint, and adapters. Chrome vanadium steel construction resists breaking. Organized blow-molded case for easy transport.</p>
+                    <div class="product-price">$79.99</div>
+                    <a href="https://amzn.to/4d6QxBu" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 6: Torque Wrench -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71mDM2xM5oL._AC_SY300_SX300_.jpg" alt="AEROFORCE Click Torque Wrench Set 1/4 3/8 1/2 inch drives" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">AEROFORCE 3Pcs Click Torque Wrench Set</h3>
+                    <p class="product-description">3-piece set with 1/4", 3/8", and 1/2" drives. Range: 4-20, 5-45, and 15-165 Ft.lb. 72-tooth dual-scale design for precise measurements. Click-type for bikes, motorcycles, cars, and ATVs. Comes with adapter set and storage case.</p>
+                    <div class="product-price">$69.99</div>
+                    <a href="https://amzn.to/4tRsgGZ" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 7: Cordless Drill Combo -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81w88A4RGAL._AC_SY300_SX300_.jpg" alt="DEWALT 20V MAX Cordless Drill and Impact Driver combo kit" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">DEWALT 20V MAX Drill & Impact Driver Combo</h3>
+                    <p class="product-description">Professional cordless power tool combo with drill and impact driver. Compact size for tight spaces. Includes 2 lithium-ion batteries, charger, and contractor bag. Brushless motors for efficiency. Works for automotive, home repair, and construction work.</p>
+                    <div class="product-price">$149.99</div>
+                    <a href="https://amzn.to/4utMkPx" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 8: Solenoid -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71eKTJQPnJL._AC_SY300_SX300_.jpg" alt="12 Volt Solenoid for ATV Winch Golf Cart" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">300A Heavy Duty 12 Volt Solenoid</h3>
+                    <p class="product-description">Nickel-plated 12V solenoid rated for 300A continuous duty. Works for winches, golf carts, off-road vehicles, marine applications, and small engines. Heavy-duty construction handles harsh conditions. Universal fit design works on most ATV and UTV models.</p>
+                    <div class="product-price">$24.99</div>
+                    <a href="https://amzn.to/4uahImx" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 9: Carb Cleaner -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81j6t6z+6EL._AC_SY300_SX300_.jpg" alt="Gumout Carb and Choke Cleaner jet spray 16 oz" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Gumout Carb & Choke Cleaner 16 oz</h3>
+                    <p class="product-description">Professional-grade jet spray carburetor and choke cleaner. Removes gum, varnish, and carbon deposits fast. Works on small engines, ATVs, motorcycles, and lawn equipment. Powerful solvent formula. Includes precision spray nozzle for targeted cleaning.</p>
+                    <div class="product-price">$8.99</div>
+                    <a href="https://amzn.to/3OM67up" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 10: Chainsaw -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81KYnVpXP1L._AC_SY300_SX300_.jpg" alt="Stihl MS 162 Chainsaw 30cm lightweight" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Stihl MS 162 Chainsaw 30cm</h3>
+                    <p class="product-description">Lightweight chainsaw with 27cc engine. 30cm cutting length perfect for pruning and firewood cutting. Anti-vibration system reduces fatigue. Side-access chain tensioner for easy adjustments. Master control lever combines choke, throttle, and stop functions. Reliable German engineering.</p>
+                    <div class="product-price">$299.99</div>
+                    <a href="https://amzn.to/3P3X3Rt" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 11: Klein Multimeter -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71+9R+xN8bL._AC_SY300_SX300_.jpg" alt="Klein Tools Digital Multimeter auto ranging True RMS" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Klein Digital Multi-Meter Auto-Ranging</h3>
+                    <p class="product-description">Professional auto-ranging digital multimeter with True RMS measurement. 600V CAT III rated for AC/DC voltage testing. Tests continuity, resistance, and current. Large backlit display. Rugged rubber housing. Essential tool for electrical troubleshooting.</p>
+                    <div class="product-price">$49.99</div>
+                    <a href="https://amzn.to/3OVEdvU" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 12: Fluke BK120 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71xCR7ECQZL._AC_SY300_SX300_.jpg" alt="Fluke SmarTrace BK120 circuit breaker finder" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Fluke SmarTrace BK120 Circuit Breaker Finder</h3>
+                    <p class="product-description">Professional circuit breaker finder locates breakers instantly. GFCI testing capability. Works through walls and conduit. Finds correct breaker for any outlet fast. Saves time on electrical work. Includes transmitter and receiver. Made by trusted brand Fluke.</p>
+                    <div class="product-price">$89.99</div>
+                    <a href="https://amzn.to/4sON4gL" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 13: Arc Captain Welder -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/71aKb2EJQUL._AC_SY300_SX300_.jpg" alt="ARCCAPTAIN MIG Welder 200A multi-process" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">ARCCAPTAIN Welder 200A Multi-Process</h3>
+                    <p class="product-description">Multi-process MIG welder with digital display and 200 amp output. Supports MIG, flux-core, stick, and TIG welding. Compact design fits in garages. Variable speed wire feed. Works on 110V and 220V input. Great for beginners and experienced welders.</p>
+                    <div class="product-price">$349.99</div>
+                    <a href="https://amzn.to/41Tr09O" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 14: Lincoln Welder -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81xrLVYVBQL._AC_SY300_SX300_.jpg" alt="Lincoln Electric welding machine pro" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Lincoln Electric Welder</h3>
+                    <p class="product-description">Professional-grade stick welder from trusted brand Lincoln Electric. Durable construction for heavy-duty welding work. Simple controls for easy operation. Excellent arc performance. Works on standard 110V or 220V power. Built to last for years of reliable use.</p>
+                    <div class="product-price">$399.99</div>
+                    <a href="https://amzn.to/4e110AG" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 15: Warn Winch -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81ZLKV+E5FL._AC_SY300_SX300_.jpg" alt="Warn VR EVO 8 electric winch" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Warn VR EVO Winch</h3>
+                    <p class="product-description">8,000 lbs pulling power electric winch. Fast line speed for quick recovery. Durable construction handles tough off-road conditions. Wireless remote control for safety and convenience. Synthetic rope included. Made by industry leader Warn Industries.</p>
+                    <div class="product-price">$449.99</div>
+                    <a href="https://amzn.to/4sOoo89" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+            <!-- Product 16: Smittybilt Winch -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://m.media-amazon.com/images/I/81fvCJ+3qYL._AC_SY300_SX300_.jpg" alt="Smittybilt GEN2 XRC winch electric recovery" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <span class="amazon-badge">AMAZON</span>
+                    <h3 class="product-title">Smittybilt GEN 2 XRC Winch</h3>
+                    <p class="product-description">9,500 lbs pulling power electric winch. Next-gen design with improved speed and power. IP67 sealed connectors resist water and corrosion. 100% duty cycle motor for continuous operation. Wired and wireless remote options. Works with trucks, jeeps, and SUVs.</p>
+                    <div class="product-price">$399.99</div>
+                    <a href="https://amzn.to/3QHgdNw" class="buy-button" target="_blank">View on Amazon</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Why Shop Section -->
+        <div class="intro-text" style="margin-top: 60px;">
+            <h2>Why Shop HardLife Repairs?</h2>
+            <p>Every product in our store has been tested or thoroughly researched by someone who actually works on engines, welds metal, and fixes things for a living. We only recommend tools that work, are durable, and are worth your money.</p>
+            <p>Our categories cover the essentials: small engine repair tools, welding machines and supplies, electrical testing equipment, off-road recovery gear, and professional hand tools. Whether you're a beginner DIYer or an experienced technician, you'll find what you need here.</p>
+            <p>All products are Amazon affiliate links, which means we earn a small commission at no extra cost to you. This helps us keep creating free repair guides and content.</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>HardLife Repairs is a participant in the Amazon Services LLC Associates Program.</p>
+        <p>© 2026 HardLife Repairs. All rights reserved.</p>
+        <p style="margin-top: 15px;">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="affiliate-disclosure.html">Affiliate Disclosure</a> | 
+            <a href="contact.html">Contact</a>
+        </p>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
 </body>
-</html>"""
-
-with open('/mnt/agents/output/atv-starter-solenoid.html', 'w', encoding='utf-8') as f:
-    f.write(guide1)
-
-print("✅ Guide 1 saved: atv-starter-solenoid.html")
-print(f"📄 Size: {len(guide1)} characters")
+</html>
