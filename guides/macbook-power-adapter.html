@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Repair or Replace a MacBook Power Adapter Cable - DIY Guide</title>
+    <meta name="description" content="Complete guide to diagnosing and fixing a broken MacBook power adapter. Repair the cable, replace connectors, or upgrade to a new adapter safely.">
+    <meta name="keywords" content="MacBook power adapter repair, MagSafe cable broken, MacBook charging cable, power adapter troubleshooting">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="How to Repair a MacBook Power Adapter">
+    <meta property="og:description" content="DIY MacBook power adapter repair and troubleshooting guide.">
+    <meta property="og:url" content="https://hardliferepairs.org/guides/macbook-power-adapter.html">
+    <meta property="og:type" content="article">
+    
+    <!-- Canonical Tag -->
+    <link rel="canonical" href="https://hardliferepairs.org/guides/macbook-power-adapter.html">
+
+    <style>
+        :root {
+            --orange: #D4653A;
+            --orange-dark: #B8552E;
+            --dark: #1A1A1A;
+            --dark-lighter: #242424;
+            --dark-card: #2A2A2A;
+            --text: #E8E6E3;
+            --text-muted: #9A9896;
+            --max-width: 900px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid rgba(212, 101, 58, 0.15);
+            z-index: 1000;
+            padding: 0 24px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+
+        .nav-cta {
+            background: var(--orange);
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            background: var(--dark-card);
+            padding: 50px 24px;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        .hero-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--orange);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            font-size: 1rem;
+        }
+
+        .meta-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 50px 24px;
+        }
+
+        h2 {
+            color: var(--orange);
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            border-bottom: 2px solid var(--orange);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: var(--orange);
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .info-box {
+            background: var(--dark-card);
+            border-left: 4px solid var(--orange);
+            padding: 24px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .info-box strong {
+            color: var(--orange);
+        }
+
+        .tool-list {
+            background: var(--dark-card);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 101, 58, 0.2);
+        }
+
+        .tool-list h3 {
+            margin-top: 0;
+        }
+
+        .tool-list ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .tool-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-muted);
+        }
+
+        .tool-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+        .step-box {
+            background: var(--dark-lighter);
+            border: 1px solid rgba(212, 101, 58, 0.3);
+            padding: 24px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .step-number {
+            display: inline-block;
+            background: var(--orange);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .step-box h4 {
+            color: var(--text);
+            margin: 10px 0 8px;
+            font-size: 1.1rem;
+        }
+
+        .step-box p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #FFC107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .warning strong {
+            color: #FFC107;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .success {
+            background: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid #4CAF50;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 4px;
+        }
+
+        .success strong {
+            color: #4CAF50;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .cta-section {
+            background: var(--dark-card);
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 50px;
+            border-left: 4px solid var(--orange);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--orange);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--orange-dark);
+        }
+
+        footer {
+            background: #111;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(212, 101, 58, 0.1);
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--orange);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <a href="../../index.html" class="logo">🔧 Hard<span>Life</span></a>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../guides.html">Guides</a></li>
+                <li><a href="../../store.html">Store</a></li>
+                <li><a href="../../faq.html">FAQ</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../contact.html">Contact</a></li>
+                <li><a href="../../store.html" class="nav-cta">Shop Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>How to Repair or Replace a MacBook Power Adapter</h1>
+            <p>Your MacBook won't charge? The power adapter cable is often the culprit. Learn to diagnose the problem, repair broken cables, or replace the adapter. Save $60-80 vs buying a new one from Apple.</p>
+            
+            <div class="meta-info">
+                <span>⏱️ Time: 15-30 min</span>
+                <span>💰 Saves: $60-80</span>
+                <span>🛠️ Difficulty: Easy to Medium</span>
+                <span>💵 Cost: $20-60</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- What You'll Need -->
+        <div class="tool-list">
+            <h3>What You'll Need</h3>
+            <ul>
+                <li>USB Multimeter ($40-60) to test voltage</li>
+                <li>Replacement MacBook Power Adapter ($30-70)</li>
+                <li>Heat Shrink Tubing (for cable repairs)</li>
+                <li>Electrical Tape</li>
+                <li>Soldering Iron (for connector repairs, optional)</li>
+            </ul>
+        </div>
+
+        <!-- Understanding the Problem -->
+        <h2>Understanding MacBook Power Adapter Issues</h2>
+        <p>MacBook power adapters are notorious for cable damage. The cable gets bent, pinched, and stressed repeatedly, causing internal wires to break. Symptoms include: laptop won't charge, charging light flickers, or adapter gets very hot.</p>
+
+        <div class="info-box">
+            <strong>Common Problems:</strong><br>
+            - Cable bent near the connector<br>
+            - Frayed or torn outer insulation<br>
+            - No charging indicator light<br>
+            - Adapter very hot to touch<br>
+            - Intermittent charging (only works at certain angles)
+        </div>
+
+        <!-- Safety First -->
+        <h2>Safety First</h2>
+
+        <div class="warning">
+            <strong>⚠️ Safety Warnings:</strong><br>
+            1. Unplug the adapter from the wall before troubleshooting<br>
+            2. Never use a damaged adapter — risk of electrical shock<br>
+            3. Don't open the adapter itself (high voltage inside)<br>
+            4. Replace, don't repair, if the adapter overheats
+        </div>
+
+        <!-- Step 1: Diagnose -->
+        <h2>Step 1: Diagnose the Problem</h2>
+        <div class="step-box">
+            <div class="step-number">1</div>
+            <h4>Test the Adapter</h4>
+            <p>Set your multimeter to DC voltage. Plug the adapter into a wall outlet. Place the multimeter probes on the charging connector (positive and negative). A working adapter should show 14.85V (for 15" MacBooks) or 16.5V (for 17" models). If you see 0V, the adapter is dead.</p>
+        </div>
+
+        <div class="info-box">
+            <strong>Check the Cable:</strong> Visually inspect the entire length. Look for cuts, kinks, exposed wires, or burn marks. If found, the cable is damaged and should be replaced.
+        </div>
+
+        <!-- Step 2: Check the Connector -->
+        <h2>Step 2: Inspect the Magnetic Connector</h2>
+        <div class="step-box">
+            <div class="step-number">2</div>
+            <h4>Look for Corrosion or Damage</h4>
+            <p>Examine the MagSafe connector where the cable connects to the MacBook. Look for black or green corrosion, bent pins, or loose contacts. Gently clean the connector with a dry cloth. If corrosion is heavy or the connector is bent, replacement is needed.</p>
+        </div>
+
+        <!-- Step 3: Cable Repair Option -->
+        <h2>Step 3: Option A - Repair the Cable</h2>
+        <p>If the cable is damaged but the adapter and connectors are fine, you can repair it:</p>
+
+        <div class="step-box">
+            <div class="step-number">3a</div>
+            <h4>Locate the Damage</h4>
+            <p>Find the point where the outer insulation is damaged. This is usually near the connector or where the cable is bent repeatedly. Carefully cut away the damaged section, exposing 2-3 inches of cable.</p>
+        </div>
+
+        <div class="step-box">
+            <div class="step-number">3b</div>
+            <h4>Wrap with Heat Shrink Tubing</h4>
+            <p>Slide heat shrink tubing over the exposed section. Use a heat gun or hairdryer set to high heat. Apply heat until the tubing shrinks snugly around the cable. This provides insulation and protection. Let it cool for 1 minute.</p>
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ Caution:</strong> This is a temporary fix. For safety, replacement is recommended if internal wires are exposed or damaged.
+        </div>
+
+        <!-- Step 4: Replace the Adapter -->
+        <h2>Step 4: Option B - Replace the Adapter</h2>
+        <p>This is the safest option for most damage:</p>
+
+        <div class="step-box">
+            <div class="step-number">4</div>
+            <h4>Buy the Correct Replacement</h4>
+            <p>Make sure you buy the correct wattage adapter for your MacBook model. Find this on the bottom of your old adapter (45W, 60W, 85W, etc.). Search "[Your MacBook model] power adapter" to find the exact match. Third-party adapters ($30-50) work well and are much cheaper than Apple originals ($80+).</p>
+        </div>
+
+        <!-- Step 5: Replace -->
+        <h2>Step 5: Install the New Adapter</h2>
+        <div class="step-box">
+            <div class="step-number">5</div>
+            <h4>Unpack and Test</h4>
+            <p>Unbox the new adapter. Plug it into a wall outlet. Using your multimeter, verify it outputs the correct voltage (14.85V or 16.5V depending on your model). If correct, connect it to your MacBook. The charging light should illuminate. Your laptop should recognize it and begin charging.</p>
+        </div>
+
+        <!-- Care Tips -->
+        <h2>How to Protect Your New Adapter</h2>
+        <p><strong>Don't Bend or Coil Tightly:</strong> Wrap the cable loosely or coil it in large loops. Avoid bending the cable near connectors.</p>
+
+        <p><strong>Keep Away from Heat:</strong> Don't place the adapter on soft surfaces (blankets, pillows). This traps heat and can damage the adapter.</p>
+
+        <p><strong>Use a Cable Protector:</strong> Silicone cable sleeves ($5-10) protect against wear and damage. Especially useful near the connector.</p>
+
+        <p><strong>Store Safely:</strong> When traveling, use a small protective case for the adapter. Prevents damage in backpacks.</p>
+
+        <!-- Troubleshooting -->
+        <h2>Troubleshooting After Replacement</h2>
+        <p><strong>New adapter won't charge:</strong> Make sure it's the correct wattage. Check that the connector is fully inserted and the charging light is on.</p>
+
+        <p><strong>Laptop still won't charge:</strong> The problem might be the charging port on the MacBook itself. This requires more involved repair. Contact us for help diagnosing.</p>
+
+        <p><strong>How long do adapters last?</strong> Quality adapters last 2-4 years with normal use. Heavy use (daily bending, drops) can reduce lifespan to 1-2 years.</p>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Questions? Need Help?</h2>
+            <p>Got stuck during the troubleshooting? Contact us for guidance.</p>
+            <a href="../../contact.html" class="cta-button">Get Help</a>
+            <a href="../../guides.html" class="cta-button">Back to Guides</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 HardLife Repairs. All rights reserved.</p>
+        <p><a href="../../privacy.html">Privacy Policy</a> | <a href="../../affiliate-disclosure.html">Affiliate Disclosure</a></p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
