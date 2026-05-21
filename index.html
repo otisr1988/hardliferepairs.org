@@ -115,8 +115,9 @@
             background: none;
             border: none;
             color: #e0e0e0;
-            font-size: 24px;
+            font-size: 28px;
             cursor: pointer;
+            padding: 5px 10px;
         }
         
         /* Mobile Menu */
@@ -125,12 +126,12 @@
             background-color: #2d2d2d;
             padding: 15px;
             text-align: center;
-            flex-direction: column;
-            gap: 15px;
         }
         
         .mobile-nav.active {
             display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
         
         .mobile-nav a {
@@ -143,6 +144,10 @@
         
         .mobile-nav a:last-child {
             border-bottom: none;
+        }
+        
+        .mobile-nav a:hover {
+            color: #ff6b35;
         }
         
         /* Hero Section */
@@ -255,8 +260,7 @@
         
         .featured-item img {
             width: 100%;
-            max-width: 180px;
-            height: 150px;
+            height: 180px;
             object-fit: contain;
             border-radius: 8px;
             margin-bottom: 10px;
@@ -327,7 +331,7 @@
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">🔧 HardLife Repairs</a>
-            <ul class="nav-links" id="navLinks">
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="guides.html">Guides</a></li>
                 <li><a href="store.html">Store</a></li>
@@ -335,18 +339,18 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
     
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="index.html">Home</a>
-        <a href="guides.html">Guides</a>
-        <a href="store.html">Store</a>
-        <a href="faq.html">FAQ</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html" onclick="closeMobileMenu()">Home</a>
+        <a href="guides.html" onclick="closeMobileMenu()">Guides</a>
+        <a href="store.html" onclick="closeMobileMenu()">Store</a>
+        <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+        <a href="about.html" onclick="closeMobileMenu()">About</a>
+        <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
     </div>
 
     <!-- Hero Section -->
@@ -390,19 +394,19 @@
             <p style="text-align: center; color: #bbb; margin-bottom: 20px;">Hand-picked tools that actually work. See our full store for more.</p>
             <div class="featured-grid">
                 <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/71+9R+xN8bL._AC_SY300_SX300_.jpg" alt="Klein Digital Multimeter">
+                    <img src="https://m.media-amazon.com/images/I/71+9R+xN8bL._AC_SY300_SX300_.jpg" alt="Klein Digital Multimeter" loading="lazy">
                     <a href="store.html#multimeter">Klein Multimeter</a>
                 </div>
                 <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/710hf9x5XWL._AC_SY300_SX300_.jpg" alt="Heavy duty tow strap">
+                    <img src="https://m.media-amazon.com/images/I/710hf9x5XWL._AC_SY300_SX300_.jpg" alt="Heavy duty tow strap" loading="lazy">
                     <a href="store.html#tow-strap">Tow Strap Kit</a>
                 </div>
                 <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/81NQxI+EjHL._AC_SY300_SX300_.jpg" alt="LLNDEI 151 piece tool set">
+                    <img src="https://m.media-amazon.com/images/I/81NQxI+EjHL._AC_SY300_SX300_.jpg" alt="LLNDEI 151 piece tool set" loading="lazy">
                     <a href="store.html#tool-set">Tool Set</a>
                 </div>
                 <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/71SGRPNkc0L._AC_SY300_SX300_.jpg" alt="Auto darkening welding helmet">
+                    <img src="https://m.media-amazon.com/images/I/71SGRPNkc0L._AC_SY300_SX300_.jpg" alt="Auto darkening welding helmet" loading="lazy">
                     <a href="store.html#welding-helmet">Welding Helmet</a>
                 </div>
             </div>
@@ -431,14 +435,21 @@
             mobileNav.classList.toggle('active');
         }
 
-        // Close menu when a link is clicked
-        document.querySelectorAll('.mobile-nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.getElementById('mobileNav').classList.remove('active');
-            });
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuBtn = document.getElementById('menuBtn');
+            
+            if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
         });
     </script>
 
 </body>
 </html>
-
