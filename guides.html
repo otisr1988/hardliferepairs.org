@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DIY Repair Guides - HardLife Repairs | Small Engine, Electrical, Home Fixes</title>
-    <meta name="description" content="Step-by-step DIY repair guides. Fix your ATV starter solenoid, dryer not heating, and learn to use a multimeter. No mechanic needed. Save hundreds.">
-    <meta name="keywords" content="ATV starter solenoid replacement, dryer not heating fix, how to use a multimeter, small engine repair guides, DIY electrical troubleshooting">
+    <meta name="description" content="Step-by-step DIY repair guides. Fix your ATV starter solenoid, dryer not heating, welding helmet setup, PS4 controller, chainsaw chain, spark plugs, and MacBook chargers. No mechanic needed. Save hundreds.">
+    <meta name="keywords" content="ATV starter solenoid replacement, dryer not heating fix, welding helmet guide, PS4 controller repair, chainsaw chain replacement, spark plug replacement, MacBook charger repair, DIY electrical troubleshooting">
     
     <!-- Open Graph Tags -->
     <meta property="og:title" content="DIY Repair Guides - HardLife Repairs">
@@ -17,308 +17,500 @@
     
     <style>
         :root {
-            --orange: #D4653A;
-            --orange-dark: #B8552E;
-            --dark: #1A1A1A;
+            --orange: #ff6b35;
+            --orange-dark: #e55a2b;
+            --dark: #1a1a1a;
             --dark-lighter: #242424;
-            --dark-card: #2A2A2A;
-            --text: #E8E6E3;
-            --text-muted: #9A9896;
+            --dark-card: #2d2d2d;
+            --text: #e0e0e0;
+            --text-muted: #999;
             --max-width: 1200px;
         }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--dark);
             color: var(--text);
             line-height: 1.6;
         }
+        
+        /* Navigation */
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
-            background: rgba(26, 26, 26, 0.95);
-            border-bottom: 1px solid rgba(212, 101, 58, 0.15);
+            background: rgba(26, 26, 26, 0.98);
+            border-bottom: 3px solid var(--orange);
             z-index: 1000;
-            padding: 0 24px;
+            padding: 15px 20px;
         }
+        
         .nav-container {
             max-width: var(--max-width);
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 70px;
         }
+        
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text);
+            color: var(--orange);
             text-decoration: none;
+            transition: color 0.3s;
         }
-        .logo span { color: var(--orange); }
+        
+        .logo:hover {
+            color: var(--orange-dark);
+        }
+        
         .nav-links {
             display: flex;
-            align-items: center;
-            gap: 32px;
+            gap: 30px;
             list-style: none;
         }
+        
         .nav-links a {
-            color: var(--text-muted);
+            color: var(--text);
             text-decoration: none;
-            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.3s;
         }
-        .nav-links a:hover { color: var(--orange); }
+        
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+        
         .nav-cta {
-            background: var(--orange);
-            color: #fff !important;
-            padding: 10px 22px;
-            border-radius: 4px;
-            font-weight: 600;
+            background: var(--orange) !important;
+            color: white !important;
+            padding: 10px 24px !important;
+            border-radius: 5px;
         }
-        .hero {
-            padding: 140px 24px 60px;
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 28px;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        
+        /* Mobile Menu */
+        .mobile-nav {
+            display: none;
+            background-color: #2d2d2d;
+            padding: 15px;
             text-align: center;
-            max-width: var(--max-width);
-            margin: 0 auto;
         }
+        
+        .mobile-nav.active {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .mobile-nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            display: block;
+            transition: color 0.3s;
+        }
+        
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--orange);
+        }
+        
+        /* Hero */
+        .hero {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+            border-bottom: 3px solid var(--orange);
+        }
+        
         .hero h1 {
             font-size: 2.5rem;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: var(--text);
         }
-        .hero h1 span { color: var(--orange); }
+        
+        .hero h1 span {
+            color: var(--orange);
+        }
+        
         .hero p {
             color: var(--text-muted);
             font-size: 1.1rem;
             max-width: 600px;
             margin: 0 auto;
         }
-        .filter-bar {
+        
+        .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 24px 40px;
+            padding: 50px 20px;
+        }
+        
+        .filter-bar {
             display: flex;
             gap: 12px;
-            flex-wrap: wrap;
             justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
         }
+        
         .filter-btn {
             padding: 10px 24px;
             background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
+            border: 2px solid #444;
+            color: var(--text);
             border-radius: 30px;
             cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
             transition: all 0.3s;
         }
+        
         .filter-btn:hover,
         .filter-btn.active {
             background: var(--orange);
             border-color: var(--orange);
-            color: #fff;
+            color: white;
         }
-        .guides-section {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 24px 80px;
-        }
+        
         .guides-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
+            margin-bottom: 50px;
         }
+        
         .guide-card {
             background: var(--dark-card);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 28px;
-            transition: all 0.3s;
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 30px;
             text-decoration: none;
             color: var(--text);
             display: block;
+            transition: all 0.3s;
+            cursor: pointer;
         }
+        
         .guide-card:hover {
             border-color: var(--orange);
-            transform: translateY(-4px);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
         }
+        
         .guide-tag {
             display: inline-block;
-            padding: 4px 12px;
-            background: rgba(212, 101, 58, 0.15);
+            padding: 6px 14px;
+            background: rgba(255, 107, 53, 0.15);
             color: var(--orange);
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
+        
         .guide-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: var(--text);
         }
+        
         .guide-card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+            line-height: 1.6;
         }
+        
         .guide-meta {
             display: flex;
             gap: 16px;
-            color: #6A6866;
-            font-size: 0.85rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.9rem;
+            color: var(--text-muted);
             padding-top: 16px;
-            margin-top: 16px;
+            border-top: 1px solid #444;
         }
+        
         .tools-needed {
-            background: var(--dark-lighter);
+            background: rgba(255, 107, 53, 0.1);
             border-left: 3px solid var(--orange);
             padding: 12px 16px;
-            border-radius: 0 6px 6px 0;
-            margin-top: 12px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-        .coming-soon {
-            text-align: center;
-            padding: 60px 24px;
+            border-radius: 6px;
+            margin-top: 16px;
+            font-size: 0.9rem;
             color: var(--text-muted);
         }
-        .coming-soon h3 {
-            color: var(--orange);
-            font-size: 1.5rem;
-            margin-bottom: 16px;
-        }
+        
         footer {
             background: #111;
-            padding: 40px 24px;
-            border-top: 1px solid rgba(212, 101, 58, 0.1);
+            padding: 40px 20px;
+            border-top: 3px solid var(--orange);
             text-align: center;
-            color: #6A6866;
-            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
+        
         footer a {
-            color: #6A6866;
+            color: var(--orange);
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 10px;
+            transition: color 0.3s;
         }
-        footer a:hover { color: var(--orange); }
+        
+        footer a:hover {
+            color: var(--orange-dark);
+        }
+        
+        footer p {
+            margin: 10px 0;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero { padding: 120px 20px 40px; }
-            .guides-grid { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guide-meta {
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">🔧 Hard<span>Life</span></a>
+            <a href="index.html" class="logo">🔧 HardLife Repairs</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="guides.html">Guides</a></li>
                 <li><a href="store.html">Store</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="store.html" class="nav-cta">Shop Now</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html" onclick="closeMobileMenu()">Home</a>
+        <a href="guides.html" onclick="closeMobileMenu()">Guides</a>
+        <a href="store.html" onclick="closeMobileMenu()">Store</a>
+        <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
+        <a href="about.html" onclick="closeMobileMenu()">About</a>
+        <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+        <a href="store.html" class="nav-cta" onclick="closeMobileMenu()">Shop Now</a>
+    </div>
+
+    <!-- Hero Section -->
     <section class="hero">
         <h1>DIY <span>Repair Guides</span></h1>
         <p>Real fixes for real people. No fancy tools, no mechanic needed. Just step-by-step guides that save you hundreds.</p>
     </section>
 
-    <div class="filter-bar">
-        <button class="filter-btn active">All Guides</button>
-        <button class="filter-btn">ATV & Machine</button>
-        <button class="filter-btn">Home Fixes</button>
-        <button class="filter-btn">Tool Guides</button>
-    </div>
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active">All Guides</button>
+            <button class="filter-btn">ATV & Engine</button>
+            <button class="filter-btn">Home & Appliance</button>
+            <button class="filter-btn">Electronics</button>
+            <button class="filter-btn">Tools & Equipment</button>
+        </div>
 
-    <section class="guides-section">
+        <!-- Guides Grid -->
         <div class="guides-grid">
 
+            <!-- Guide 1: ATV Solenoid -->
             <a href="guides/atv-starter-solenoid.html" class="guide-card">
-                <span class="guide-tag">ATV & Machine Repair</span>
-                <h3>How to Test and Replace a Starter Solenoid</h3>
-                <p>ATV clicks but won't start? $15 fix in 20 minutes. Save $150 in shop fees. Works on all ATVs.</p>
+                <span class="guide-tag">🚙 ATV & Engine</span>
+                <h3>How to Test & Replace a Starter Solenoid</h3>
+                <p>Your ATV clicks but won't start? Dead solenoid is the culprit. $15 fix in 20 minutes. Save $150+ in shop fees.</p>
                 <div class="guide-meta">
                     <span>⏱️ 20 min</span>
                     <span>💰 Saves $150</span>
                     <span>🛠️ Easy</span>
                 </div>
                 <div class="tools-needed">
-                    <strong>What You Need:</strong> Multimeter, 10mm wrench, replacement solenoid
+                    <strong>Need:</strong> Multimeter, 10mm wrench, replacement solenoid ($12-25)
                 </div>
             </a>
 
+            <!-- Guide 2: Dryer Heating -->
             <a href="guides/dryer-not-heating.html" class="guide-card">
-                <span class="guide-tag">Home Fixes</span>
+                <span class="guide-tag">🏠 Home & Appliance</span>
                 <h3>Dryer Not Heating? Fix It in 45 Minutes</h3>
-                <p>Replace heating element, thermal fuse, or thermostat. Save $200+ vs shop repair.</p>
+                <p>Replace the heating element, thermal fuse, or thermostat. Works on Whirlpool, Kenmore, Maytag, and more. Save $200+.</p>
                 <div class="guide-meta">
                     <span>⏱️ 45 min</span>
                     <span>💰 Saves $200</span>
                     <span>🛠️ Easy</span>
                 </div>
                 <div class="tools-needed">
-                    <strong>What You Need:</strong> Screwdrivers, multimeter, replacement part
+                    <strong>Need:</strong> Screwdrivers, multimeter, replacement part ($15-30)
                 </div>
             </a>
 
-            <a href="guides/how-to-use-multimeter.html" class="guide-card">
-                <span class="guide-tag">Tool Guides</span>
-                <h3>How to Use a Multimeter for Beginners</h3>
-                <p>Test voltage, continuity, and resistance like a pro in 20 minutes. No experience needed.</p>
+            <!-- Guide 3: Welding Helmet -->
+            <a href="guides/welding-helmet.html" class="guide-card">
+                <span class="guide-tag">🔥 Tools & Equipment</span>
+                <h3>How to Choose & Use an Auto-Darkening Welding Helmet</h3>
+                <p>Learn shade settings, arc sensors, solar power, and LED lights. Safe welding starts here.</p>
                 <div class="guide-meta">
-                    <span>⏱️ 20 min</span>
-                    <span>💰 Saves $100s</span>
+                    <span>⏱️ 15 min read</span>
+                    <span>📚 Educational</span>
+                    <span>🛠️ All Levels</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>Learn:</strong> Shade ranges, sensor technology, maintenance tips
+                </div>
+            </a>
+
+            <!-- Guide 4: PS4 Controller -->
+            <a href="guides/ps4-controller-charging-port.html" class="guide-card">
+                <span class="guide-tag">⚡ Electronics</span>
+                <h3>How to Fix a PS4 Controller Charging Port</h3>
+                <p>Broken micro-USB port? Solder a new one or hardwire the cable. $5-15 fix. Save $60 on a new controller.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 30-60 min</span>
+                    <span>💰 Saves $60</span>
+                    <span>🛠️ Medium</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>Need:</strong> Soldering iron, replacement port/cable, tweezers
+                </div>
+            </a>
+
+            <!-- Guide 5: Chainsaw Chain -->
+            <a href="guides/chainsaw-chain-replacement.html" class="guide-card">
+                <span class="guide-tag">🔥 Tools & Equipment</span>
+                <h3>How to Replace a Chainsaw Chain</h3>
+                <p>Dull or broken chainsaw chain? Replace it in 15 minutes. Learn tension adjustment and safety tips.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 15 min</span>
+                    <span>💰 Saves $50</span>
+                    <span>🛠️ Easy</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>Need:</strong> Replacement chain, adjustment wrench, new bar oil
+                </div>
+            </a>
+
+            <!-- Guide 6: Spark Plug -->
+            <a href="guides/small-engine-spark-plug.html" class="guide-card">
+                <span class="guide-tag">🚙 ATV & Engine</span>
+                <h3>How to Replace a Spark Plug in a Small Engine</h3>
+                <p>Lawnmower won't start? Worn spark plug is often the culprit. 5-minute fix. Works on all 4-stroke engines.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 5-10 min</span>
+                    <span>💰 Saves $25</span>
                     <span>🛠️ Beginner</span>
                 </div>
                 <div class="tools-needed">
-                    <strong>What You Need:</strong> Digital multimeter ($40-60)
+                    <strong>Need:</strong> Replacement spark plug ($5-15), spark plug socket
+                </div>
+            </a>
+
+            <!-- Guide 7: MacBook Charger -->
+            <a href="guides/macbook-power-adapter.html" class="guide-card">
+                <span class="guide-tag">⚡ Electronics</span>
+                <h3>How to Repair or Replace a MacBook Power Adapter</h3>
+                <p>Broken charging cable? Diagnose the problem and repair or replace. Save $60-80 vs Apple's price.</p>
+                <div class="guide-meta">
+                    <span>⏱️ 15-30 min</span>
+                    <span>💰 Saves $60</span>
+                    <span>🛠️ Easy to Medium</span>
+                </div>
+                <div class="tools-needed">
+                    <strong>Need:</strong> Multimeter, replacement adapter ($30-70)
                 </div>
             </a>
 
         </div>
-    </section>
 
-    <div class="coming-soon">
-        <h3>More Guides Coming Soon</h3>
-        <p>We're working on guides for carburetor cleaning, flat tire repair, deadbolt replacement, and more.<br>Check back weekly for new content.</p>
     </div>
 
+    <!-- Footer -->
     <footer>
-        <p>
-            <a href="index.html">Home</a>
-            <a href="guides.html">Guides</a>
-            <a href="store.html">Store</a>
-            <a href="about.html">About</a>
+        <p style="margin-bottom: 10px;">
+            <a href="index.html">Home</a> | 
+            <a href="guides.html">Guides</a> | 
+            <a href="store.html">Store</a> | 
+            <a href="about.html">About</a> | 
             <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy Policy</a>
+        </p>
+        <p>
+            <a href="privacy.html">Privacy Policy</a> | 
             <a href="affiliate-disclosure.html">Affiliate Disclosure</a>
         </p>
-        <p style="margin-top: 12px;">HardLife Repairs is a participant in the Amazon Associates Program.</p>
+        <p style="margin-top: 15px;">HardLife Repairs is a participant in the Amazon Associates Program.</p>
         <p style="margin-top: 8px;">&copy; 2026 HardLife Repairs. Built from real-world experience fixing what had to be fixed.</p>
     </footer>
 
+    <script>
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuBtn = document.getElementById('menuBtn');
+            
+            if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+    </script>
+
 </body>
 </html>
-
-
-
-
-
-
