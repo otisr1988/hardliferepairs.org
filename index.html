@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HardLife Repairs - Real DIY repair guides for ATVs, appliances, small engines, welding & more. Step-by-step fixes and honest tool recommendations to save money.">
-    <meta name="keywords" content="DIY repair, ATV repair, appliance repair, small engine repair, dryer repair, welding, fix it yourself, tool recommendations, HardLife Repairs">
+    <meta name="description" content="HardLife Repairs - Real DIY repair guides for ATVs, appliances, small engines, welding and more. Step-by-step fixes and honest tool recommendations to save money.">
+    <meta name="keywords" content="DIY repair, ATV repair, appliance repair, small engine repair, chainsaw repair, welding, HardLife Repairs, Kodi Ruble">
     <title>HardLife Repairs | Real DIY Fixes for Real Life</title>
 
     <style>
@@ -22,27 +22,26 @@
         }
         header {
             background: #0a0a0a;
-            padding: 1rem 5%;
+            padding: 1.2rem 5%;
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 3px solid var(--orange);
-        }
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
         .logo img {
-            height: 55px;
+            height: 70px;
             width: auto;
         }
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
+            flex-wrap: wrap;
         }
         .nav-links a {
             color: #ccc;
@@ -50,35 +49,11 @@
             font-weight: 500;
         }
         .nav-links a:hover { color: var(--orange); }
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.9rem;
-            background: none;
-            border: none;
-            color: white;
-            cursor: pointer;
-        }
-
-        .mobile-nav {
-            display: none;
-            background: #1a1a1a;
-            padding: 1rem 5%;
-            flex-direction: column;
-            gap: 1rem;
-            border-top: 1px solid #333;
-        }
-        .mobile-nav.active { display: flex; }
-        .mobile-nav a {
-            color: #ddd;
-            text-decoration: none;
-            padding: 12px 0;
-            border-bottom: 1px solid #333;
-        }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/store-banner.jpg') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/long-banner.jpg') center/cover no-repeat;
             text-align: center;
-            padding: 6rem 5% 4rem;
+            padding: 6rem 5% 5rem;
             color: white;
         }
         .hero h1 { font-size: 2.7rem; margin-bottom: 1rem; }
@@ -87,11 +62,18 @@
         .cta-button {
             background: var(--orange);
             color: white;
-            padding: 16px 40px;
+            padding: 16px 42px;
             border-radius: 8px;
             text-decoration: none;
+            font-size: 1.15rem;
             font-weight: 600;
             display: inline-block;
+            margin: 0 10px 10px;
+        }
+        .cta-shop {
+            background: #e55a2b;
+            padding: 18px 46px;
+            font-size: 1.2rem;
         }
 
         .container {
@@ -99,108 +81,121 @@
             margin: 0 auto;
             padding: 4.5rem 5%;
         }
-        h2 {
-            text-align: center;
-            color: white;
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
-        }
+        h2 { text-align: center; margin-bottom: 3rem; font-size: 2.2rem; }
+
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
         .card {
             background: var(--gray);
             border-radius: 12px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            text-align: center;
         }
-        .card:hover { transform: translateY(-10px); }
         .card img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: cover;
         }
-        .card-content {
-            padding: 1.6rem;
-        }
-        .card h3 { margin-bottom: 0.8rem; color: white; font-size: 1.35rem; }
+        .card-content { padding: 1.6rem; }
 
         footer {
             background: #0a0a0a;
             text-align: center;
             padding: 3rem 5%;
             color: #888;
-            font-size: 0.95rem;
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: block; }
             .hero h1 { font-size: 2.2rem; }
-            .hero { padding: 4.5rem 5% 3rem; }
+            .nav-links { gap: 1.2rem; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="images/hardlife-logo.png" alt="HardLife Repairs Logo">
-            </a>
-            <ul class="nav-links">
-                <li><a href="guides.html">Guides</a></li>
-                <li><a href="store.html">Tools Store</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn">☰</button>
-        </div>
-
-        <div class="mobile-nav" id="mobileNav">
-            <a href="guides.html">Guides</a>
-            <a href="store.html">Tools Store</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </div>
+        <a href="index.html" class="logo">
+            <img src="images/hardlife-logo.png" alt="HardLife Repairs">
+        </a>
+        <ul class="nav-links">
+            <li><a href="guides.html">Guides</a></li>
+            <li><a href="store.html">Tools Store</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </header>
 
     <section class="hero">
         <h1>Fix It Yourself.<br>Save Real Money.</h1>
-        <p>Practical step-by-step repair guides and honest tool picks for ATVs, appliances, small engines, welding, and everyday hard life problems.</p>
+        <p>Practical step-by-step repair guides + honest tool recommendations for real people fixing real things.</p>
+        <p style="color:#aaa; font-size:1.05rem;">Tested in the real world by Kodi</p>
+        
         <a href="guides.html" class="cta-button">Browse Guides</a>
+        <a href="store.html" class="cta-button cta-shop">Shop Tools</a>
     </section>
 
     <div class="container">
         <h2>What We Cover</h2>
         <div class="cards">
-            <!-- Populate these with your actual content from previous version -->
             <div class="card">
-                <img src="images/stihl-chainsaw-1.jpg" alt="Small Engine Repair">
+                <img src="images/stihl-chainsaw-1.jpg" alt="Small Engines">
                 <div class="card-content">
                     <h3>Small Engines</h3>
-                    <p>ATVs, chainsaws, mowers, generators — get them running again.</p>
+                    <p>Chainsaws, mowers, generators & more</p>
                 </div>
             </div>
-            <!-- Add your other cards here similarly -->
+            <div class="card">
+                <img src="images/atv.jpg" alt="ATVs & Off-Road">
+                <div class="card-content">
+                    <h3>ATVs & Off-Road</h3>
+                    <p>Repair and maintenance for your ride</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/appliance.jpg" alt="Appliances">
+                <div class="card-content">
+                    <h3>Appliances</h3>
+                    <p>Dryers, washers, refrigerators & more</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/welding.jpg" alt="Other Repairs">
+                <div class="card-content">
+                    <h3>Other Repairs & Projects</h3>
+                    <p>Welding, electronics, and much more</p>
+                </div>
+            </div>
         </div>
+    </div>
+
+    <div class="container" style="background: var(--gray);">
+        <h2>Popular Repair Guides</h2>
+        <div class="cards">
+            <!-- Add your actual guide cards here -->
+        </div>
+        <p style="text-align:center; margin-top:2rem;">
+            <a href="guides.html" style="color:var(--orange);">Click here to see all repair guides →</a>
+        </p>
+    </div>
+
+    <div class="container">
+        <h2>Tools We Personally Use & Recommend</h2>
+        <div class="cards">
+            <!-- Add your featured Amazon tool cards here -->
+        </div>
+        <p style="text-align:center; margin-top:2rem;">
+            <a href="store.html" style="color:var(--orange);">Click here to see all recommended tools in our store →</a>
+        </p>
     </div>
 
     <footer>
         <p>&copy; 2026 HardLife Repairs • Built for real people doing real fixes</p>
         <p>
-            <a href="privacy.html" style="color:#888; margin:0 12px;">Privacy</a>
-            <a href="affiliate-disclosure.html" style="color:#888; margin:0 12px;">Affiliate Disclosure</a>
+            <a href="privacy.html" style="color:#888; margin:0 15px;">Privacy</a>
+            <a href="affiliate-disclosure.html" style="color:#888; margin:0 15px;">Affiliate Disclosure</a>
         </p>
     </footer>
-
-    <script>
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileNav = document.getElementById('mobileNav');
-        menuBtn.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
