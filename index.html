@@ -57,7 +57,7 @@
             color: white;
         }
         .hero h1 { font-size: 2.7rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.25rem; max-width: 720px; margin: 0 auto 2.5rem; }
+        .hero p { font-size: 1.25rem; max-width: 720px; margin: 0 auto 1.5rem; }
 
         .cta-button {
             background: var(--orange);
@@ -68,7 +68,7 @@
             font-size: 1.15rem;
             font-weight: 600;
             display: inline-block;
-            margin: 0 10px 10px;
+            margin: 8px;
         }
         .cta-shop {
             background: #e55a2b;
@@ -81,7 +81,7 @@
             margin: 0 auto;
             padding: 4.5rem 5%;
         }
-        h2 { text-align: center; margin-bottom: 3rem; font-size: 2.2rem; }
+        h2 { text-align: center; margin-bottom: 3rem; font-size: 2.25rem; }
 
         .cards {
             display: grid;
@@ -93,13 +93,15 @@
             border-radius: 12px;
             overflow: hidden;
             text-align: center;
+            transition: transform 0.3s;
         }
+        .card:hover { transform: translateY(-8px); }
         .card img {
             width: 100%;
             height: 240px;
             object-fit: cover;
         }
-        .card-content { padding: 1.6rem; }
+        .card-content { padding: 1.8rem 1.5rem; }
 
         footer {
             background: #0a0a0a;
@@ -175,18 +177,18 @@
         <div class="cards">
             <!-- Add your actual guide cards here -->
         </div>
-        <p style="text-align:center; margin-top:2rem;">
-            <a href="guides.html" style="color:var(--orange);">Click here to see all repair guides →</a>
+        <p style="text-align:center; margin-top:2.5rem;">
+            <a href="guides.html" style="color:var(--orange); font-size:1.1rem;">Click here to see all repair guides →</a>
         </p>
     </div>
 
     <div class="container">
         <h2>Tools We Personally Use & Recommend</h2>
         <div class="cards">
-            <!-- Add your featured Amazon tool cards here -->
+            <!-- Add your featured tool cards here -->
         </div>
-        <p style="text-align:center; margin-top:2rem;">
-            <a href="store.html" style="color:var(--orange);">Click here to see all recommended tools in our store →</a>
+        <p style="text-align:center; margin-top:2.5rem;">
+            <a href="store.html" style="color:var(--orange); font-size:1.1rem;">Click here to see all recommended tools in our store →</a>
         </p>
     </div>
 
