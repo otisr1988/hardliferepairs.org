@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HardLife Repairs - Real DIY fix-it guides for ATVs, appliances, electronics, and more. Step-by-step repairs to save money and learn real skills.">
-    <meta name="keywords" content="DIY repair, ATV repair, appliance repair, fix dryer not heating, ATV starter solenoid, money saving repairs, tool recommendations, hard life repairs">
+    <meta name="description" content="HardLife Repairs - Real DIY guides for ATVs, appliances, electronics, welding & home projects. Step-by-step fixes + honest tool recommendations to save money.">
+    <meta name="keywords" content="DIY repair, ATV repair, appliance repair, small engine repair, dryer not heating, welding tips, fix it yourself, tool recommendations, Kodi Ruble">
     <title>HardLife Repairs | Real DIY Fixes for Real Life</title>
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="HardLife Repairs | Real DIY Fixes">
+    <meta property="og:description" content="Practical repair guides and tools that actually work.">
+    <meta property="og:url" content="https://hardliferepairs.org/">
+    <meta property="og:type" content="website">
+
     <style>
         :root {
             --orange: #ff6b35;
@@ -25,9 +32,9 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 2px solid #222;
+            border-bottom: 3px solid var(--orange);
         }
-        nav {
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -35,7 +42,7 @@
             align-items: center;
         }
         .logo {
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: white;
             text-decoration: none;
@@ -44,6 +51,7 @@
         .nav-links {
             display: flex;
             gap: 2rem;
+            list-style: none;
         }
         .nav-links a {
             color: #ccc;
@@ -51,135 +59,160 @@
             font-weight: 500;
         }
         .nav-links a:hover { color: var(--orange); }
-        .hamburger {
+        .mobile-menu-btn {
             display: none;
             font-size: 1.8rem;
-            cursor: pointer;
+            background: none;
+            border: none;
             color: white;
+            cursor: pointer;
+        }
+
+        /* Mobile Menu */
+        .mobile-nav {
+            display: none;
+            background: #1a1a1a;
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .mobile-nav.active { display: flex; }
+        .mobile-nav a {
+            color: #ddd;
+            text-decoration: none;
+            padding: 12px;
+            border-bottom: 1px solid #333;
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://picsum.photos/id/1015/1600/900') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://picsum.photos/id/1015/1600/900') center/cover;
             text-align: center;
-            padding: 6rem 5% 4rem;
+            padding: 5rem 5% 4rem;
             color: white;
         }
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-        }
+        .hero h1 { font-size: 2.6rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
+
         .cta-button {
             background: var(--orange);
             color: white;
             padding: 16px 36px;
-            border: none;
             border-radius: 8px;
-            font-size: 1.15rem;
-            cursor: pointer;
             text-decoration: none;
+            font-weight: 600;
             display: inline-block;
         }
 
-        section {
-            padding: 4.5rem 5%;
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 4rem 5%;
         }
         h2 {
             text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.2rem;
             color: white;
+            margin-bottom: 3rem;
+            font-size: 2.1rem;
         }
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         .card {
             background: var(--gray);
             border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: all 0.3s;
         }
-        .card:hover { transform: translateY(-8px); }
+        .card:hover { transform: translateY(-10px); }
         .card img {
             width: 100%;
-            height: 200px;
+            height: 210px;
             object-fit: cover;
         }
         .card-content {
             padding: 1.5rem;
         }
-        .card h3 { margin-bottom: 0.75rem; color: white; }
-        .card p { margin-bottom: 1rem; font-size: 0.95rem; }
+        .card h3 { margin-bottom: 0.8rem; color: white; }
 
         footer {
             background: #0a0a0a;
             text-align: center;
             padding: 3rem 5%;
-            font-size: 0.9rem;
             color: #888;
+            font-size: 0.95rem;
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero { padding: 4rem 5% 3rem; }
+            .mobile-menu-btn { display: block; }
+            .hero h1 { font-size: 2.1rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
+        <div class="nav-container">
             <a href="index.html" class="logo">HardLife<span>Repairs</span></a>
-            <div class="nav-links">
-                <a href="guides.html">Guides</a>
-                <a href="store.html">Tools</a>
-                <a href="about.html">About</a>
-            </div>
-            <div class="hamburger">☰</div>
-        </nav>
+            <ul class="nav-links">
+                <li><a href="guides.html">Guides</a></li>
+                <li><a href="store.html">Tools Store</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="guides.html">Guides</a>
+            <a href="store.html">Tools Store</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </header>
 
     <section class="hero">
         <h1>Fix It Yourself.<br>Save Real Money.</h1>
-        <p>Practical DIY repair guides and honest tool picks for the hard things in life — ATVs, appliances, generators, and more.</p>
-        <a href="guides.html" class="cta-button">Browse Guides</a>
+        <p>Practical DIY repair guides and honest tool picks from someone who's been in the trenches.</p>
+        <a href="guides.html" class="cta-button">Browse All Guides</a>
     </section>
 
-    <section>
-        <h2>Popular Repair Guides</h2>
+    <div class="container">
+        <h2>What We Cover</h2>
         <div class="cards">
-            <!-- Add your actual guide cards here with real links and images -->
             <div class="card">
-                <img src="https://picsum.photos/id/201/600/400" alt="ATV starter solenoid replacement">
+                <img src="https://picsum.photos/id/201/600/400" alt="Small Engine Repair ATV Lawn Mower">
                 <div class="card-content">
-                    <h3>ATV Starter Solenoid Fix</h3>
-                    <p>30 minutes • Save $150+</p>
-                    <a href="guides/atv-starter.html">Read Guide →</a>
+                    <h3>Small Engines</h3>
+                    <p>ATVs, mowers, generators — get them running again.</p>
                 </div>
             </div>
-            <!-- Repeat more cards as needed -->
+            <div class="card">
+                <img src="https://picsum.photos/id/251/600/400" alt="Appliance Repair">
+                <div class="card-content">
+                    <h3>Appliance Repair</h3>
+                    <p>Dryers, washers, refrigerators — fix them cheap.</p>
+                </div>
+            </div>
+            <!-- Add more cards as needed from your original -->
         </div>
-    </section>
+    </div>
 
-    <section style="background: var(--gray);">
-        <h2>Featured Tools</h2>
-        <div class="cards">
-            <!-- Your Amazon affiliate cards here -->
-        </div>
-    </section>
+    <!-- Add Featured Tools and other sections here similarly with good spacing -->
 
     <footer>
         <p>&copy; 2026 HardLife Repairs • Honest DIY for real people</p>
-        <p><a href="privacy.html" style="color:#888;">Privacy</a> • <a href="affiliate.html" style="color:#888;">Affiliate Disclosure</a></p>
+        <p><a href="privacy.html" style="color:#888; margin:0 10px;">Privacy</a> 
+           <a href="affiliate-disclosure.html" style="color:#888; margin:0 10px;">Affiliate Disclosure</a></p>
     </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        menuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
