@@ -3,453 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HardLife Repairs & Home DIY - Fix It Yourself Guides & Tools</title>
-    <meta name="description" content="Real DIY repair guides for ATVs, electronics, welding, and home projects. Learn from Kodi Ruble's hands-on experience. No fluff, just what works.">
-    <meta name="keywords" content="DIY repair, ATV repair, welder repair, electronics repair, home DIY, mechanic tools, fix it yourself, small engine repair">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="HardLife Repairs & Home DIY">
-    <meta property="og:description" content="Real DIY repair guides for ATVs, electronics, and more. Learn from someone who fixes things for real.">
-    <meta property="og:url" content="https://hardliferepairs.org/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://hardliferepairs.org/images/og-image.jpg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="HardLife Repairs & Home DIY">
-    <meta name="twitter:description" content="Real DIY repair guides for ATVs, electronics, and more.">
-    
-    <!-- Canonical Tag -->
-    <link rel="canonical" href="https://hardliferepairs.org/">
-    
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "HardLife Repairs",
-      "url": "https://hardliferepairs.org",
-      "logo": "https://hardliferepairs.org/images/hardlife-logo.png",
-      "description": "Real DIY repair guides and professional tools for fixing ATVs, electronics, welders, and home projects.",
-      "sameAs": [
-        "https://instagram.com/rubleotis",
-        "https://facebook.com/kodi.ruble.2025",
-        "https://youtube.com/@towboater2011"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "contact@hardliferepairs.com",
-        "contactType": "Customer Support"
-      }
-    }
-    </script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-538327340"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-538327340');
-    </script>
-
+    <meta name="description" content="HardLife Repairs - Real DIY fix-it guides for ATVs, appliances, electronics, and more. Step-by-step repairs to save money and learn real skills.">
+    <meta name="keywords" content="DIY repair, ATV repair, appliance repair, fix dryer not heating, ATV starter solenoid, money saving repairs, tool recommendations, hard life repairs">
+    <title>HardLife Repairs | Real DIY Fixes for Real Life</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --orange: #ff6b35;
+            --dark: #121212;
+            --gray: #1e1e1e;
         }
-        
+        * { margin:0; padding:0; box-sizing:border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            line-height: 1.6;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: var(--dark);
+            color: #ddd;
+            line-height: 1.7;
         }
-        
-        /* Navigation */
-        nav {
-            background-color: #2d2d2d;
-            padding: 15px 0;
+        header {
+            background: #0a0a0a;
+            padding: 1rem 5%;
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 3px solid #ff6b35;
+            border-bottom: 2px solid #222;
         }
-        
-        .nav-container {
+        nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff6b35;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
             text-decoration: none;
         }
-        
+        .logo span { color: var(--orange); }
         .nav-links {
             display: flex;
-            list-style: none;
-            gap: 30px;
+            gap: 2rem;
         }
-        
         .nav-links a {
-            color: #e0e0e0;
+            color: #ccc;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: #ff6b35;
-        }
-        
-        .mobile-menu-btn {
+        .nav-links a:hover { color: var(--orange); }
+        .hamburger {
             display: none;
-            background: none;
-            border: none;
-            color: #e0e0e0;
-            font-size: 28px;
+            font-size: 1.8rem;
             cursor: pointer;
-            padding: 5px 10px;
-        }
-        
-        /* Mobile Menu */
-        .mobile-nav {
-            display: none;
-            background-color: #2d2d2d;
-            padding: 15px;
-            text-align: center;
-        }
-        
-        .mobile-nav.active {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .mobile-nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            padding: 10px;
-            border-bottom: 1px solid #444;
-            display: block;
-        }
-        
-        .mobile-nav a:last-child {
-            border-bottom: none;
-        }
-        
-        .mobile-nav a:hover {
-            color: #ff6b35;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: #2d2d2d;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 3px solid #ff6b35;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            color: #ff6b35;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 20px;
-            color: #bbb;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #ff6b35;
             color: white;
-            padding: 15px 40px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://picsum.photos/id/1015/1600/900') center/cover no-repeat;
+            text-align: center;
+            padding: 6rem 5% 4rem;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .cta-button {
+            background: var(--orange);
+            color: white;
+            padding: 16px 36px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            cursor: pointer;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            transition: background-color 0.3s;
+            display: inline-block;
         }
-        
-        .cta-button:hover {
-            background-color: #e55a2b;
-        }
-        
-        /* Main Content */
-        .container {
+
+        section {
+            padding: 4.5rem 5%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
         }
-        
         h2 {
-            color: #ff6b35;
-            font-size: 32px;
-            margin-bottom: 30px;
             text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: white;
         }
-        
-        /* Service Cards */
-        .services {
+        .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
-        
-        .service-card {
-            background-color: #2d2d2d;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px solid #444;
-            transition: transform 0.3s, border-color 0.3s;
+        .card {
+            background: var(--gray);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
         }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff6b35;
-        }
-        
-        .service-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        
-        .service-card h3 {
-            color: #ff6b35;
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-        
-        .service-card p {
-            color: #bbb;
-        }
-        
-        /* Featured Products */
-        .featured {
-            background-color: #2d2d2d;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px 0;
-            border-left: 4px solid #ff6b35;
-        }
-        
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .featured-item {
-            text-align: center;
-        }
-        
-        .featured-item img {
+        .card:hover { transform: translateY(-8px); }
+        .card img {
             width: 100%;
-            height: 180px;
-            object-fit: contain;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            background: #1a1a1a;
-            padding: 10px;
+            height: 200px;
+            object-fit: cover;
         }
-        
-        .featured-item a {
-            color: #ff6b35;
-            text-decoration: none;
-            font-weight: bold;
+        .card-content {
+            padding: 1.5rem;
         }
-        
-        .featured-item a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Footer */
+        .card h3 { margin-bottom: 0.75rem; color: white; }
+        .card p { margin-bottom: 1rem; font-size: 0.95rem; }
+
         footer {
-            background-color: #2d2d2d;
+            background: #0a0a0a;
             text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-            border-top: 3px solid #ff6b35;
-        }
-        
-        footer p {
+            padding: 3rem 5%;
+            font-size: 0.9rem;
             color: #888;
-            margin: 5px 0;
         }
-        
-        footer a {
-            color: #ff6b35;
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero h1 {
-                font-size: 32px;
-            }
-            
-            .hero p {
-                font-size: 16px;
-            }
-            
-            h2 {
-                font-size: 24px;
-            }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 4rem 5% 3rem; }
         }
     </style>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">HardLife<span>Repairs</span></a>
+            <div class="nav-links">
+                <a href="guides.html">Guides</a>
+                <a href="store.html">Tools</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="index.html" class="logo">🔧 HardLife Repairs</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="guides.html">Guides</a></li>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMobileMenu()">☰</button>
+    <section class="hero">
+        <h1>Fix It Yourself.<br>Save Real Money.</h1>
+        <p>Practical DIY repair guides and honest tool picks for the hard things in life — ATVs, appliances, generators, and more.</p>
+        <a href="guides.html" class="cta-button">Browse Guides</a>
+    </section>
+
+    <section>
+        <h2>Popular Repair Guides</h2>
+        <div class="cards">
+            <!-- Add your actual guide cards here with real links and images -->
+            <div class="card">
+                <img src="https://picsum.photos/id/201/600/400" alt="ATV starter solenoid replacement">
+                <div class="card-content">
+                    <h3>ATV Starter Solenoid Fix</h3>
+                    <p>30 minutes • Save $150+</p>
+                    <a href="guides/atv-starter.html">Read Guide →</a>
+                </div>
+            </div>
+            <!-- Repeat more cards as needed -->
         </div>
-    </nav>
-    
-    <!-- Mobile Navigation -->
-    <div class="mobile-nav" id="mobileNav">
-        <a href="index.html" onclick="closeMobileMenu()">Home</a>
-        <a href="guides.html" onclick="closeMobileMenu()">Guides</a>
-        <a href="store.html" onclick="closeMobileMenu()">Store</a>
-        <a href="faq.html" onclick="closeMobileMenu()">FAQ</a>
-        <a href="about.html" onclick="closeMobileMenu()">About</a>
-        <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
-    </div>
+    </section>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <h1>HardLife Repairs & Home DIY</h1>
-        <p>Real tools. Real repairs. Real results. Built by someone who's been in the trenches and knows what actually works.</p>
-        <a href="store.html" class="cta-button">Shop Our Tools</a>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-        
-        <!-- Services Section -->
-        <h2>What We Cover</h2>
-        <div class="services">
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Small Engines</h3>
-                <p>Lawn mowers, ATVs, generators, and anything with a motor that won't start. Get them running again without the shop bill.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚡</div>
-                <h3>Electronics Repair</h3>
-                <p>PS4 controllers, MacBooks, charging ports, and circuit boards. Solder, rewire, and resurrect dead gear.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🔥</div>
-                <h3>Welding</h3>
-                <p>Equipment reviews, technique tips, and metalwork projects. From stick to MIG, we cover it all.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3>Home DIY</h3>
-                <p>Practical projects that save money and teach you skills that last a lifetime. Do it yourself, the right way.</p>
-            </div>
+    <section style="background: var(--gray);">
+        <h2>Featured Tools</h2>
+        <div class="cards">
+            <!-- Your Amazon affiliate cards here -->
         </div>
+    </section>
 
-        <!-- Featured Products -->
-        <div class="featured">
-            <h2>Featured Tools</h2>
-            <p style="text-align: center; color: #bbb; margin-bottom: 20px;">Hand-picked tools that actually work. See our full store for more.</p>
-            <div class="featured-grid">
-                <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/71+9R+xN8bL._AC_SY300_SX300_.jpg" alt="Klein Digital Multimeter" loading="lazy">
-                    <a href="store.html#multimeter">Klein Multimeter</a>
-                </div>
-                <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/710hf9x5XWL._AC_SY300_SX300_.jpg" alt="Heavy duty tow strap" loading="lazy">
-                    <a href="store.html#tow-strap">Tow Strap Kit</a>
-                </div>
-                <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/81NQxI+EjHL._AC_SY300_SX300_.jpg" alt="LLNDEI 151 piece tool set" loading="lazy">
-                    <a href="store.html#tool-set">Tool Set</a>
-                </div>
-                <div class="featured-item">
-                    <img src="https://m.media-amazon.com/images/I/71SGRPNkc0L._AC_SY300_SX300_.jpg" alt="Auto darkening welding helmet" loading="lazy">
-                    <a href="store.html#welding-helmet">Welding Helmet</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <p><strong>HardLife Repairs & Home DIY</strong></p>
-        <p>Built by Kodi Ruble • Murphysboro, Illinois</p>
-        <p>Fix it. Don't trash it. That's the HardLife way.</p>
-        <p style="margin-top: 15px; font-size: 12px;">
-            <a href="privacy.html">Privacy Policy</a> | 
-            <a href="affiliate-disclosure.html">Affiliate Disclosure</a> | 
-            <a href="contact.html">Contact</a>
-        </p>
-        <p style="margin-top: 10px; color: #666; font-size: 12px;">
-            &copy; 2026 HardLife Repairs. All rights reserved. As an Amazon Associate, we earn from qualifying purchases.
-        </p>
+        <p>&copy; 2026 HardLife Repairs • Honest DIY for real people</p>
+        <p><a href="privacy.html" style="color:#888;">Privacy</a> • <a href="affiliate.html" style="color:#888;">Affiliate Disclosure</a></p>
     </footer>
-
-    <script>
-        function toggleMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.toggle('active');
-        }
-
-        function closeMobileMenu() {
-            const mobileNav = document.getElementById('mobileNav');
-            mobileNav.classList.remove('active');
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileNav = document.getElementById('mobileNav');
-            const menuBtn = document.getElementById('menuBtn');
-            
-            if (!mobileNav.contains(event.target) && !menuBtn.contains(event.target)) {
-                mobileNav.classList.remove('active');
-            }
-        });
-    </script>
-
 </body>
 </html>
