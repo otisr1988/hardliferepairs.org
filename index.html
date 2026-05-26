@@ -4,24 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="HardLife Repairs - Real DIY repair guides for ATVs, appliances, small engines, welding and more. Step-by-step fixes and honest tool recommendations to save money.">
-    <meta name="keywords" content="DIY repair, ATV repair, appliance repair, small engine repair, chainsaw repair, welding, HardLife Repairs, Kodi Ruble">
+    <meta name="keywords" content="DIY repair, ATV repair, appliance repair, small engine repair, chainsaw repair, welding, HardLife Repairs">
     <title>HardLife Repairs | Real DIY Fixes for Real Life</title>
 
     <style>
         :root {
             --orange: #ff6b35;
-            --dark: #121212;
-            --gray: #1e1e1e;
+            --light: #f8f8f8;
+            --gray: #333;
         }
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: system-ui, -apple-system, sans-serif;
-            background: var(--dark);
-            color: #ddd;
+            background: var(--light);
+            color: var(--gray);
             line-height: 1.7;
         }
         header {
-            background: #0a0a0a;
+            background: #1a1a1a;
             padding: 1.2rem 5%;
             position: sticky;
             top: 0;
@@ -41,19 +41,19 @@
             flex-wrap: wrap;
         }
         .nav-links a {
-            color: #ccc;
+            color: #ddd;
             text-decoration: none;
             font-weight: 500;
         }
         .nav-links a:hover { color: var(--orange); }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('images/store-banner.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('images/store-banner.jpg') center/cover no-repeat;
             text-align: center;
-            padding: 6rem 5% 5rem;
+            padding: 7rem 5% 5rem;
             color: white;
         }
-        .hero h1 { font-size: 2.7rem; margin-bottom: 1rem; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
         .hero p { font-size: 1.25rem; max-width: 720px; margin: 0 auto 1.5rem; }
 
         .cta-button {
@@ -78,7 +78,7 @@
             margin: 0 auto;
             padding: 4.5rem 5%;
         }
-        h2 { text-align: center; margin-bottom: 3rem; font-size: 2.25rem; }
+        h2 { text-align: center; margin-bottom: 3rem; font-size: 2.25rem; color: var(--gray); }
 
         .cards {
             display: grid;
@@ -86,10 +86,11 @@
             gap: 2rem;
         }
         .card {
-            background: var(--gray);
+            background: white;
             border-radius: 12px;
             overflow: hidden;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: transform 0.3s;
         }
         .card:hover { transform: translateY(-8px); }
@@ -97,15 +98,14 @@
             width: 100%;
             height: 240px;
             object-fit: cover;
-            background: #333;
         }
         .card-content { padding: 1.8rem 1.5rem; }
 
         footer {
-            background: #0a0a0a;
+            background: #1a1a1a;
+            color: #aaa;
             text-align: center;
             padding: 3rem 5%;
-            color: #888;
         }
 
         @media (max-width: 768px) {
@@ -130,13 +130,23 @@
     <section class="hero">
         <h1>Fix It Yourself.<br>Save Real Money.</h1>
         <p>Practical step-by-step repair guides + honest tool recommendations for real people fixing real things.</p>
-        <p style="color:#aaa; font-size:1.05rem;">Tested in the real world by Kodi</p>
+        <p style="color:#ddd; font-size:1.05rem;">Tested in the real world by Kodi</p>
         
         <a href="guides.html" class="cta-button">Browse Guides</a>
-        <a href="store.html" class="cta-button cta-shop">Shop Tools</a>
+        <a href="store.html" class="cta-button cta-shop">Shop Recommended Tools</a>
     </section>
 
     <div class="container">
+        <h2>Tools We Personally Use & Recommend</h2>
+        <div class="cards">
+            <!-- Add your featured Amazon tool cards here later -->
+        </div>
+        <p style="text-align:center; margin-top:2.5rem;">
+            <a href="store.html" style="color:var(--orange); font-size:1.15rem;">View Full Tools Store →</a>
+        </p>
+    </div>
+
+    <div class="container" style="background: #f0f0f0;">
         <h2>What We Cover</h2>
         <div class="cards">
             <div class="card">
@@ -170,31 +180,21 @@
         </div>
     </div>
 
-    <div class="container" style="background: var(--gray);">
+    <div class="container">
         <h2>Popular Repair Guides</h2>
         <div class="cards">
-            <!-- Add your actual guide cards here later -->
+            <!-- Add guide cards here later -->
         </div>
         <p style="text-align:center; margin-top:2.5rem;">
-            <a href="guides.html" style="color:var(--orange); font-size:1.1rem;">Click here to see all repair guides →</a>
-        </p>
-    </div>
-
-    <div class="container">
-        <h2>Tools We Personally Use & Recommend</h2>
-        <div class="cards">
-            <!-- Add your featured tool cards here later -->
-        </div>
-        <p style="text-align:center; margin-top:2.5rem;">
-            <a href="store.html" style="color:var(--orange); font-size:1.1rem;">Click here to see all recommended tools in our store →</a>
+            <a href="guides.html" style="color:var(--orange); font-size:1.1rem;">See All Repair Guides →</a>
         </p>
     </div>
 
     <footer>
         <p>&copy; 2026 HardLife Repairs • Built for real people doing real fixes</p>
         <p>
-            <a href="privacy.html" style="color:#888; margin:0 15px;">Privacy</a>
-            <a href="affiliate-disclosure.html" style="color:#888; margin:0 15px;">Affiliate Disclosure</a>
+            <a href="privacy.html" style="color:#aaa; margin:0 15px;">Privacy</a>
+            <a href="affiliate-disclosure.html" style="color:#aaa; margin:0 15px;">Affiliate Disclosure</a>
         </p>
     </footer>
 </body>
